@@ -16,26 +16,30 @@
 <style>
 
 /* =====================================================
-   GLOBAL & VARIABLES (ELEGANT BOTANICAL THEME)
+   GLOBAL & VARIABLES
 ===================================================== */
 
 :root {
-    --bg-dark: #120a15;
-    --bg-deep: #211327;
-    --bg-card: rgba(35, 20, 42, 0.75);
-    
-    --pink-soft: #f3b2c3;
-    --lavender-soft: #cbafdb;
-    --pink-light: #fcf4f6;
-    --rose-accent: #d87b96;
+    --maroon-dark: #1a030b;
+    --maroon-deep: #2c0512;
+    --maroon-medium: #4a0a1f;
+    --maroon-light: #6e1330;
 
-    --gold-primary: #e6ce9a;
-    --gold-light: #f7ebd0;
-    --gold-dark: #b89855;
+    --pink-soft: #f4b7c5;
+    --pink-light: #fbebee;
+    --rose-accent: #d87591;
 
-    --text-light: #fcf8f5;
-    --text-muted: #d9c5dd;
-    --glass-border: rgba(230, 206, 154, 0.3);
+    --gold-primary: #d4af37;
+    --gold-light: #f3e5ab;
+    --gold-dark: #aa820a;
+
+    --text-light: #fcf8f2;
+    --text-muted: #e2c2c9;
+    --glass-bg: rgba(44, 5, 18, 0.82);
+    --glass-border: rgba(212, 175, 55, 0.4);
+
+    /* SVG Seamless Pattern Background Motif Batik Jawa Floral */
+    --jawa-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M50 0 C55 25 75 45 100 50 C75 55 55 75 50 100 C45 75 25 55 0 50 C25 45 45 25 50 0 Z M50 25 C53 38 62 47 75 50 C62 53 53 62 50 75 C47 62 38 53 25 50 C38 47 47 38 50 25 Z'/%3E%3Ccircle cx='50' cy='50' r='6'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='100' cy='0' r='4'/%3E%3Ccircle cx='0' cy='100' r='4'/%3E%3Ccircle cx='100' cy='100' r='4'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 * {
@@ -53,7 +57,8 @@ body {
     overflow-x: hidden;
     color: var(--text-light);
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-deep) 50%, var(--bg-dark) 100%);
+    background-color: var(--maroon-dark);
+    background-image: linear-gradient(180deg, rgba(26, 3, 11, 0.88) 0%, rgba(44, 5, 18, 0.92) 50%, rgba(26, 3, 11, 0.88) 100%), var(--jawa-pattern);
     background-attachment: fixed;
 }
 
@@ -88,61 +93,30 @@ section {
 }
 
 /* =====================================================
-   FLOWER ORNAMENT HELPERS
+   JAWA ORNAMENT DIVIDER (CSS REPLACEMENT FOR IMAGES)
 ===================================================== */
 
-.flower-blend {
-    mix-blend-mode: screen;
-    pointer-events: none;
-    user-select: none;
-}
-
-.flower-png {
-    pointer-events: none;
-    user-select: none;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-}
-
-.flower-float {
-    animation: floatAnim 4s ease-in-out infinite alternate;
-}
-
-@keyframes floatAnim {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-10px) rotate(2deg); }
-}
-
-.flower-divider-large {
-    width: min(380px, 80%);
-    height: auto;
+.jawa-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     margin: 15px auto;
-    display: block;
+    color: var(--gold-primary);
+    font-size: 14px;
 }
 
-.flower-divider-slim {
-    width: min(260px, 65%);
-    height: auto;
-    margin: 10px auto;
-    display: block;
+.jawa-divider::before,
+.jawa-divider::after {
+    content: '';
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
 }
 
-.flower-corner-left {
-    position: absolute;
-    left: -30px;
-    bottom: -20px;
-    width: min(280px, 50vw);
-    z-index: 2;
-    opacity: 0.85;
-}
-
-.flower-corner-right {
-    position: absolute;
-    right: -30px;
-    bottom: -20px;
-    width: min(280px, 50vw);
-    transform: scaleX(-1);
-    z-index: 2;
-    opacity: 0.85;
+.jawa-divider.slim::before,
+.jawa-divider.slim::after {
+    width: 50px;
 }
 
 /* =====================================================
@@ -165,16 +139,15 @@ section {
     font-size: clamp(32px, 5vw, 54px);
     font-weight: 400;
     line-height: 1.2;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .script-title {
     font-family: 'Great Vibes', cursive;
     color: var(--gold-light);
-    font-size: clamp(42px, 7.5vw, 78px);
+    font-size: clamp(40px, 7vw, 75px);
     font-weight: normal;
     line-height: 1.1;
-    text-shadow: 0 0 15px rgba(230, 206, 154, 0.3);
 }
 
 /* =====================================================
@@ -188,8 +161,8 @@ section {
     justify-content: center;
     gap: 10px;
     overflow: hidden;
-    padding: 14px 34px;
-    color: var(--bg-dark);
+    padding: 14px 32px;
+    color: var(--maroon-dark);
     background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
     border: 1px solid var(--gold-light);
     border-radius: 50px;
@@ -197,13 +170,13 @@ section {
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 1.5px;
-    box-shadow: 0 8px 25px rgba(230, 206, 154, 0.25);
-    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    transition: all 0.35s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(230, 206, 154, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
     background: linear-gradient(135deg, #ffffff, var(--gold-light));
 }
 
@@ -220,8 +193,8 @@ section {
     justify-content: center;
     padding: 20px;
     overflow: hidden;
-    background: linear-gradient(rgba(18, 10, 21, 0.88), rgba(33, 19, 39, 0.94)),
-                url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=2000&q=85") center/cover;
+    background: linear-gradient(135deg, rgba(15, 2, 7, 0.93), rgba(44, 5, 18, 0.95)), var(--jawa-pattern);
+    background-attachment: fixed;
     transition: opacity 1s ease, visibility 1s ease;
 }
 
@@ -235,25 +208,25 @@ section {
     position: relative;
     z-index: 10;
     width: min(480px, 92vw);
-    padding: 45px 30px;
+    padding: 50px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: var(--bg-card);
+    background: var(--glass-bg);
     border: 1.5px solid var(--glass-border);
     border-radius: 30px;
     backdrop-filter: blur(16px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 0 30px rgba(230, 206, 154, 0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 0 30px rgba(212, 175, 55, 0.1);
 }
 
 .monogram {
     margin: 10px 0;
     color: var(--gold-primary);
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(60px, 10vw, 85px);
+    font-size: 80px;
     line-height: 0.9;
-    text-shadow: 0 0 18px rgba(230, 206, 154, 0.35);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .guest-name {
@@ -276,8 +249,8 @@ section {
     justify-content: center;
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(180deg, rgba(18, 10, 21, 0.82) 0%, rgba(33, 19, 39, 0.92) 100%),
-                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85") center/cover fixed;
+    background: linear-gradient(180deg, rgba(26, 3, 11, 0.85) 0%, rgba(15, 2, 7, 0.92) 100%), var(--jawa-pattern);
+    background-attachment: fixed;
 }
 
 .hero h1 {
@@ -302,7 +275,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(18, 10, 21, 0.92);
+    background: rgba(26, 3, 11, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
 }
@@ -338,8 +311,8 @@ nav a:hover {
     padding: 40px 30px;
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
@@ -395,11 +368,10 @@ nav a:hover {
 .time-box {
     min-width: 90px;
     padding: 16px;
-    background: rgba(18, 10, 21, 0.7);
+    background: rgba(15, 2, 7, 0.6);
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     text-align: center;
-    backdrop-filter: blur(5px);
 }
 
 .time-box strong {
@@ -422,12 +394,10 @@ nav a:hover {
 
 .bank-card {
     text-align: center;
-    background: linear-gradient(135deg, rgba(33, 19, 39, 0.85), rgba(18, 10, 21, 0.95));
+    background: linear-gradient(135deg, rgba(74, 10, 31, 0.8), rgba(26, 3, 11, 0.9));
     border: 1px solid var(--gold-primary);
     padding: 35px;
     border-radius: 20px;
-    position: relative;
-    overflow: hidden;
 }
 
 .account-number {
@@ -444,7 +414,7 @@ input, select, textarea {
     padding: 14px 16px;
     margin: 8px 0 20px;
     color: var(--text-light);
-    background: rgba(18, 10, 21, 0.75);
+    background: rgba(15, 2, 7, 0.7);
     border: 1px solid var(--glass-border);
     border-radius: 10px;
     outline: none;
@@ -454,7 +424,7 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     border-color: var(--gold-primary);
-    box-shadow: 0 0 10px rgba(230, 206, 154, 0.3);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* =====================================================
@@ -469,7 +439,7 @@ input:focus, select:focus, textarea:focus {
     width: 50px;
     height: 50px;
     color: var(--gold-light);
-    background: var(--bg-deep);
+    background: var(--maroon-deep);
     border: 1.5px solid var(--gold-primary);
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
@@ -492,7 +462,7 @@ input:focus, select:focus, textarea:focus {
     top: -40px;
     width: 12px;
     height: 18px;
-    background: linear-gradient(135deg, #fff, var(--lavender-soft), var(--rose-accent));
+    background: linear-gradient(135deg, #fff, var(--pink-soft), var(--rose-accent));
     border-radius: 70% 0 70% 0;
     opacity: 0.6;
     animation: petalFall linear infinite;
@@ -547,26 +517,20 @@ input:focus, select:focus, textarea:focus {
 ===================================================== -->
 <div id="opening">
 
-    <!-- FLOWER CORNERS (gambar-2_2.jpg - Blended Black Background) -->
-    <img src="gambar-2_2.jpg" class="flower-blend flower-corner-left" alt="Flower Corner Left">
-    <img src="gambar-2_2.jpg" class="flower-blend flower-corner-right" alt="Flower Corner Right">
-
     <div class="open-card">
-        <!-- FLOWER HEADER (gambar-1_2.png) -->
-        <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Flower Bouquet">
+        <div class="jawa-divider">❖</div>
 
         <div class="kicker">The Wedding Of</div>
         <div class="monogram">Arif & Sella</div>
 
-        <p class="guest-label" style="margin-top: 10px; font-style: italic; color: var(--text-muted);">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+        <p class="guest-label" style="margin-top: 15px; font-style: italic; color: var(--text-muted);">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
         <div class="guest-name" id="guestDisplay">Tamu Undangan</div>
 
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
             Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di hari bahagia pernikahan kami.
         </p>
 
-        <!-- FLOWER DIVIDER -->
-        <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Flower Ornament">
+        <div class="jawa-divider slim">♦</div>
 
         <p style="color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px;">
             RABU, 23 SEPTEMBER 2026
@@ -584,15 +548,13 @@ input:focus, select:focus, textarea:focus {
 ===================================================== -->
 <header class="hero" id="home">
     <div class="center fade">
-        <!-- TOP FLORAL HEADER (gambar-1_2.png) -->
-        <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Flower Ornament Top">
+        <div class="jawa-divider">❖</div>
 
         <div class="kicker">The Wedding Of</div>
         
         <h1>Arif <span class="amp">&</span> Sella</h1>
 
-        <!-- CENTER FLORAL DIVIDER -->
-        <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Flower Ornament Center">
+        <div class="jawa-divider slim">♦</div>
 
         <p class="date" style="font-family: 'Cinzel', serif; letter-spacing: 3px; color: var(--gold-light);">
             RABU, 23 SEPTEMBER 2026
@@ -630,13 +592,13 @@ input:focus, select:focus, textarea:focus {
     <div class="container center fade">
         <div class="kicker">QS. AR-RUM: 21</div>
         
-        <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Flower Ornament">
+        <div class="jawa-divider slim">♦</div>
 
-        <h2 class="title" style="font-size: clamp(20px, 3.5vw, 28px); font-style: italic; line-height: 1.8; max-width: 800px; margin: auto; font-family: 'Playfair Display', serif;">
+        <h2 class="title" style="font-size: clamp(20px, 3.5vw, 30px); font-style: italic; line-height: 1.8; max-width: 800px; margin: auto;">
             “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
         </h2>
 
-        <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Flower Ornament">
+        <div class="jawa-divider slim">♦</div>
     </div>
 </section>
 
@@ -648,15 +610,13 @@ input:focus, select:focus, textarea:focus {
         <div class="center fade">
             <div class="kicker">Mempelai</div>
             <h2 class="script-title">Arif & Sella</h2>
-            <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Flower Header">
+            <div class="jawa-divider">❖</div>
         </div>
 
         <div class="grid two" style="margin-top: 30px;">
             
             <!-- ARIF -->
             <div class="card center fade">
-                <img src="gambar-2_2.jpg" class="flower-blend" style="position: absolute; top: -30px; right: -30px; width: 160px;" alt="Corner Flower">
-                
                 <div class="photo-wrapper">
                     <img class="photo" src="foto-arif.jpg" alt="Arif Achmad Syaikhu">
                 </div>
@@ -675,8 +635,6 @@ input:focus, select:focus, textarea:focus {
 
             <!-- SELLA -->
             <div class="card center fade">
-                <img src="gambar-2_2.jpg" class="flower-blend" style="position: absolute; top: -30px; left: -30px; width: 160px; transform: scaleX(-1);" alt="Corner Flower">
-
                 <div class="photo-wrapper">
                     <img class="photo" src="foto-sella.jpg" alt="Sella Gusti Shakira">
                 </div>
@@ -686,7 +644,7 @@ input:focus, select:focus, textarea:focus {
                 </h3>
 
                 <p style="color: var(--text-muted); margin-top: 10px;">Putri Kelima dari:</p>
-                <p style="color: var(--text-light); font-weight: 600;">Bapak M. Selor Kowi Asmuni & Ibu Titik Holipah</p>
+                <p style="color: var(--text-light); font-weight: 600;">Bapak M. Selor Kowi Asmuni (Alm) & Ibu Titik Holipah</p>
 
                 <p style="font-size: 13px; color: var(--text-muted); margin-top: 15px; line-height: 1.6;">
                     Jl. Dewi Sartika IV RT. 3 RW. 9<br>Temas, Batu, Kota Batu
@@ -705,7 +663,7 @@ input:focus, select:focus, textarea:focus {
         <div class="kicker">SAVE THE DATE</div>
         <h2 class="title">Menuju Hari Bahagia</h2>
         
-        <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Flower Divider">
+        <div class="jawa-divider slim">♦</div>
 
         <div class="countdown">
             <div class="time-box"><strong id="days">0</strong><span>Hari</span></div>
@@ -724,7 +682,7 @@ input:focus, select:focus, textarea:focus {
         <div class="center fade">
             <div class="kicker">WEDDING EVENT</div>
             <h2 class="title">Rangkaian Acara</h2>
-            <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Flower Header">
+            <div class="jawa-divider">❖</div>
         </div>
 
         <div class="grid two" style="margin-top: 20px;">
@@ -732,7 +690,7 @@ input:focus, select:focus, textarea:focus {
             <!-- AKAD -->
             <div class="card center fade">
                 <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">Akad Nikah</h3>
-                <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Divider">
+                <div class="jawa-divider slim">♦</div>
                 
                 <p style="color: var(--gold-primary); font-weight: 600;">Rabu, 23 September 2026</p>
                 <p style="color: var(--text-muted); margin: 5px 0 15px;">09.00 WIB s.d. Selesai</p>
@@ -748,7 +706,7 @@ input:focus, select:focus, textarea:focus {
             <!-- RESEPSI -->
             <div class="card center fade">
                 <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">Resepsi</h3>
-                <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Divider">
+                <div class="jawa-divider slim">♦</div>
                 
                 <p style="color: var(--gold-primary); font-weight: 600;">Rabu, 23 September 2026</p>
                 <p style="color: var(--text-muted); margin: 5px 0 15px;">12.00 WIB s.d. Selesai</p>
@@ -776,13 +734,11 @@ input:focus, select:focus, textarea:focus {
             <p style="color: var(--text-muted); max-width: 500px; margin: auto;">
                 Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui rekening berikut:
             </p>
-            <img src="gambar-1_2.png" class="flower-png flower-divider-slim" alt="Divider">
+            <div class="jawa-divider slim">♦</div>
         </div>
 
         <div style="max-width: 550px; margin: 30px auto;" class="fade">
             <div class="bank-card">
-                <img src="gambar-2_2.jpg" class="flower-blend" style="width: 140px; display: block; margin: -10px auto 10px;" alt="Bank Ornament">
-                
                 <h3 style="font-family: 'Cinzel', serif; color: var(--gold-primary); font-size: 22px;">BANK BRI</h3>
                 <div class="account-number" id="account">312301042920536</div>
                 <p style="color: var(--text-muted);">a.n. <b style="color: var(--text-light);">SELLA GUSTI SHAKIRA</b></p>
@@ -802,7 +758,7 @@ input:focus, select:focus, textarea:focus {
         <div class="center fade">
             <div class="kicker">PLEASE CONFIRM</div>
             <h2 class="title">RSVP & Ucapan</h2>
-            <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Flower Header">
+            <div class="jawa-divider">❖</div>
         </div>
 
         <form class="card fade" style="max-width: 600px; margin: 20px auto;" onsubmit="sendRSVP(event)">
@@ -837,9 +793,9 @@ input:focus, select:focus, textarea:focus {
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-<footer class="center" style="position: relative; padding: 60px 20px 40px; background: var(--bg-dark);">
+<footer class="center" style="position: relative; padding: 60px 20px 40px; background: var(--maroon-dark);">
     <div style="position: relative; z-index: 2;">
-        <img src="gambar-1_2.png" class="flower-png flower-float flower-divider-large" alt="Footer Flower">
+        <div class="jawa-divider">❖</div>
         
         <h2 class="script-title">Arif & Sella</h2>
         <p style="color: var(--text-muted); margin-top: 10px;">Terima kasih atas doa & restu Anda.</p>
