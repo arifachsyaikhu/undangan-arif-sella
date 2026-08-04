@@ -1,926 +1,274 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Arif & Sella | Wedding Invitation</title>
-
-<meta name="description" content="The Wedding of Arif & Sella - 23 September 2026">
-
-<!-- GOOGLE FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-/* =====================================================
-   GLOBAL & VARIABLES
-===================================================== */
-
-:root {
-    --maroon-dark: #1a030b;
-    --maroon-deep: #2c0512;
-    --maroon-medium: #4a0a1f;
-    --maroon-light: #6e1330;
-
-    --pink-soft: #f4b7c5;
-    --pink-light: #fbebee;
-    --rose-accent: #d87591;
-
-    --gold-primary: #d4af37;
-    --gold-light: #f3e5ab;
-    --gold-dark: #aa820a;
-
-    --text-light: #fcf8f2;
-    --text-muted: #e2c2c9;
-    --glass-bg: rgba(44, 5, 18, 0.75);
-    --glass-border: rgba(212, 175, 55, 0.35);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    overflow-x: hidden;
-    color: var(--text-light);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(180deg, var(--maroon-dark) 0%, var(--maroon-deep) 50%, var(--maroon-dark) 100%);
-    background-attachment: fixed;
-}
-
-body.locked {
-    overflow: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-    border: none;
-}
-
-section {
-    position: relative;
-    padding: 90px 20px;
-    overflow: hidden;
-}
-
-.container {
-    width: min(1000px, 92%);
-    margin: auto;
-}
-
-.center {
-    text-align: center;
-}
-
-/* =====================================================
-   FLOWER ORNAMENT HELPERS (CSS BLEND MODE)
-===================================================== */
-
-.flower-screen {
-    mix-blend-mode: screen;
-    pointer-events: none;
-    user-select: none;
-}
-
-.flower-divider-large {
-    width: min(420px, 85%);
-    height: auto;
-    margin: 15px auto;
-    display: block;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
-}
-
-.flower-divider-slim {
-    width: min(320px, 75%);
-    height: auto;
-    margin: 12px auto;
-    display: block;
-}
-
-.flower-corner-left {
-    position: absolute;
-    left: -20px;
-    bottom: -10px;
-    width: min(200px, 45vw);
-    z-index: 2;
-}
-
-.flower-corner-right {
-    position: absolute;
-    right: -20px;
-    bottom: -10px;
-    width: min(200px, 45vw);
-    transform: scaleX(-1);
-    z-index: 2;
-}
-
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
-
-.kicker {
-    color: var(--gold-primary);
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.title {
-    margin: 10px 0 15px;
-    color: var(--pink-light);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 54px);
-    font-weight: 400;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-.script-title {
-    font-family: 'Great Vibes', cursive;
-    color: var(--gold-light);
-    font-size: clamp(40px, 7vw, 75px);
-    font-weight: normal;
-    line-height: 1.1;
-}
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    overflow: hidden;
-    padding: 14px 32px;
-    color: var(--maroon-dark);
-    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
-    border: 1px solid var(--gold-light);
-    border-radius: 50px;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-    transition: all 0.35s ease;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
-    background: linear-gradient(135deg, #ffffff, var(--gold-light));
-}
-
-/* =====================================================
-   COVER / OPENING
-===================================================== */
-
-#opening {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    overflow: hidden;
-    background: linear-gradient(rgba(15, 2, 7, 0.82), rgba(28, 3, 11, 0.92)),
-                url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=2000&q=85") center/cover;
-    transition: opacity 1s ease, visibility 1s ease;
-}
-
-#opening.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.open-card {
-    position: relative;
-    z-index: 10;
-    width: min(480px, 92vw);
-    padding: 50px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: var(--glass-bg);
-    border: 1.5px solid var(--glass-border);
-    border-radius: 30px;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 0 30px rgba(212, 175, 55, 0.1);
-}
-
-.monogram {
-    margin: 10px 0;
-    color: var(--gold-primary);
-    font-family: 'Great Vibes', cursive;
-    font-size: 80px;
-    line-height: 0.9;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-}
-
-.guest-name {
-    margin: 12px 0 20px;
-    color: var(--gold-light);
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(180deg, rgba(26, 3, 11, 0.75) 0%, rgba(15, 2, 7, 0.9) 100%),
-                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85") center/cover fixed;
-}
-
-.hero h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(65px, 12vw, 120px);
-    color: var(--pink-light);
-    font-weight: normal;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-
-.hero .amp {
-    color: var(--gold-primary);
-    font-family: 'Playfair Display', serif;
-    font-size: 0.7em;
-}
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(26, 3, 11, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.nav-inner {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 14px;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-nav a {
-    color: var(--text-muted);
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: var(--gold-primary);
-}
-
-/* =====================================================
-   CARDS & CONTAINERS
-===================================================== */
-
-.card {
-    position: relative;
-    padding: 40px 30px;
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.7);
-    border-color: var(--gold-primary);
-}
-
-.grid {
-    display: grid;
-    gap: 30px;
-}
-
-.two {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* =====================================================
-   MEMPELAI PHOTO & DETAILS
-===================================================== */
-
-.photo-wrapper {
-    position: relative;
-    width: 180px;
-    height: 230px;
-    margin: 0 auto 20px;
-}
-
-.photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 100px 100px 20px 20px;
-    border: 2px solid var(--gold-primary);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.time-box {
-    min-width: 90px;
-    padding: 16px;
-    background: rgba(15, 2, 7, 0.6);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    text-align: center;
-}
-
-.time-box strong {
-    display: block;
-    color: var(--gold-light);
-    font-family: 'Cinzel', serif;
-    font-size: 32px;
-}
-
-.time-box span {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* =====================================================
-   GIFT & RSVP FORM
-===================================================== */
-
-.bank-card {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(74, 10, 31, 0.8), rgba(26, 3, 11, 0.9));
-    border: 1px solid var(--gold-primary);
-    padding: 35px;
-    border-radius: 20px;
-}
-
-.account-number {
-    margin: 15px 0;
-    color: var(--gold-light);
-    font-family: 'Cinzel', serif;
-    font-size: 26px;
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 14px 16px;
-    margin: 8px 0 20px;
-    color: var(--text-light);
-    background: rgba(15, 2, 7, 0.7);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    outline: none;
-    font-family: inherit;
-    transition: 0.3s;
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: var(--gold-primary);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-}
-
-/* =====================================================
-   MUSIC & PETALS
-===================================================== */
-
-.music {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 200;
-    width: 50px;
-    height: 50px;
-    color: var(--gold-light);
-    background: var(--maroon-deep);
-    border: 1.5px solid var(--gold-primary);
-    border-radius: 50%;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.petal-field {
-    position: fixed;
-    inset: 0;
-    z-index: 120;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.petal {
-    position: absolute;
-    top: -40px;
-    width: 12px;
-    height: 18px;
-    background: linear-gradient(135deg, #fff, var(--pink-soft), var(--rose-accent));
-    border-radius: 70% 0 70% 0;
-    opacity: 0.6;
-    animation: petalFall linear infinite;
-}
-
-.petal:nth-child(1) { left: 5%; animation-duration: 13s; }
-.petal:nth-child(2) { left: 20%; animation-duration: 16s; animation-delay: -5s; }
-.petal:nth-child(3) { left: 40%; animation-duration: 14s; animation-delay: -8s; }
-.petal:nth-child(4) { left: 60%; animation-duration: 18s; animation-delay: -12s; }
-.petal:nth-child(5) { left: 80%; animation-duration: 15s; animation-delay: -4s; }
-
-@keyframes petalFall {
-    0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.7; }
-    100% { transform: translate(-30px, 110vh) rotate(360deg); opacity: 0; }
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media(max-width: 768px) {
-    .two { grid-template-columns: 1fr; }
-    section { padding: 60px 15px; }
-}
-
-</style>
-</head>
-
-<body class="locked">
-
-<!-- =====================================================
-     PETALS
-===================================================== -->
-<div class="petal-field">
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-</div>
-
-<!-- =====================================================
-     COVER OPENING
-===================================================== -->
-<div id="opening">
-
-    <!-- FLOWER CORNERS (Gambar-4.png) -->
-    <img src="Gambar-4.png" class="flower-screen flower-corner-left" alt="Flower Ornament">
-    <img src="Gambar-4.png" class="flower-screen flower-corner-right" alt="Flower Ornament">
-
-    <div class="open-card">
-        <!-- FLOWER HEADER (Gambar-1.png) -->
-        <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Flower Header">
-
-        <div class="kicker">The Wedding Of</div>
-        <div class="monogram">Arif & Sella</div>
-
-        <p class="guest-label" style="margin-top: 15px; font-style: italic; color: var(--text-muted);">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-        <div class="guest-name" id="guestDisplay">Tamu Undangan</div>
-
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-            Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di hari bahagia pernikahan kami.
-        </p>
-
-        <!-- FLOWER SLIM DIVIDER (Gambar-3.png) -->
-        <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Flower Divider">
-
-        <p style="color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 2px;">
-            RABU, 23 SEPTEMBER 2026
-        </p>
-
-        <br>
-        <button class="btn" onclick="openInvitation()">
-            💌 BUKA UNDANGAN
-        </button>
-    </div>
-</div>
-
-<!-- =====================================================
-     HERO SECTION
-===================================================== -->
-<header class="hero" id="home">
-    <div class="center fade">
-        <!-- TOP FLORAL HEADER (Gambar-1.png) -->
-        <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Flower Ornament Top">
-
-        <div class="kicker">The Wedding Of</div>
-        
-        <h1>Arif <span class="amp">&</span> Sella</h1>
-
-        <!-- CENTER FLORAL DIVIDER (Gambar-3.png) -->
-        <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Flower Ornament Center">
-
-        <p class="date" style="font-family: 'Cinzel', serif; letter-spacing: 3px; color: var(--gold-light);">
-            RABU, 23 SEPTEMBER 2026
-        </p>
-
-        <p style="max-width: 600px; margin: 20px auto; color: var(--text-muted); line-height: 1.7;">
-            Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.
-        </p>
-
-        <p style="color: var(--gold-primary); font-weight: 600; letter-spacing: 2px; margin-top: 15px;">
-            #SELLAmanyadenganARIF
-        </p>
-    </div>
-</header>
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-<nav>
-    <div class="nav-inner">
-        <a href="#home">Home</a>
-        <a href="#quote">Ayat</a>
-        <a href="#mempelai">Mempelai</a>
-        <a href="#countdown">Countdown</a>
-        <a href="#acara">Acara</a>
-        <a href="#gift">Gift</a>
-        <a href="#rsvp">RSVP</a>
-    </div>
-</nav>
-
-<!-- =====================================================
-     QUOTES / AYAT SECTION
-===================================================== -->
-<section id="quote">
-    <div class="container center fade">
-        <div class="kicker">QS. AR-RUM: 21</div>
-        
-        <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Flower Ornament">
-
-        <h2 class="title" style="font-size: clamp(20px, 3.5vw, 30px); font-style: italic; line-height: 1.8; max-width: 800px; margin: auto;">
-            “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
-        </h2>
-
-        <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Flower Ornament">
-    </div>
-</section>
-
-<!-- =====================================================
-     MEMPELAI SECTION
-===================================================== -->
-<section id="mempelai">
-    <div class="container">
-        <div class="center fade">
-            <div class="kicker">Mempelai</div>
-            <h2 class="script-title">Arif & Sella</h2>
-            <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Flower Header">
-        </div>
-
-        <div class="grid two" style="margin-top: 30px;">
-            
-            <!-- ARIF -->
-            <div class="card center fade">
-                <img src="Gambar-2.png" class="flower-screen" style="position: absolute; top: -20px; right: -20px; width: 140px;" alt="Corner Flower">
-                
-                <div class="photo-wrapper">
-                    <img class="photo" src="foto-arif.jpg" alt="Arif Achmad Syaikhu">
-                </div>
-
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">
-                    Arif Achmad Syaikhu
-                </h3>
-
-                <p style="color: var(--text-muted); margin-top: 10px;">Putra Ketiga dari:</p>
-                <p style="color: var(--text-light); font-weight: 600;">Bapak Mulyadi & Ibu Misriah</p>
-                
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 15px; line-height: 1.6;">
-                    Jl. Singajaya Gg. II RT. 3 RW. 1<br>Putat Kidul, Gondanglegi, Malang
-                </p>
-            </div>
-
-            <!-- SELLA -->
-            <div class="card center fade">
-                <img src="Gambar-2.png" class="flower-screen" style="position: absolute; top: -20px; left: -20px; width: 140px; transform: scaleX(-1);" alt="Corner Flower">
-
-                <div class="photo-wrapper">
-                    <img class="photo" src="foto-sella.jpg" alt="Sella Gusti Shakira">
-                </div>
-
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">
-                    Sella Gusti Shakira
-                </h3>
-
-                <p style="color: var(--text-muted); margin-top: 10px;">Putri Kelima dari:</p>
-                <p style="color: var(--text-light); font-weight: 600;">Bapak M. Selor Kowi Asmuni & Ibu Titik Holipah</p>
-
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 15px; line-height: 1.6;">
-                    Jl. Dewi Sartika IV RT. 3 RW. 9<br>Temas, Batu, Kota Batu
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     COUNTDOWN SECTION
-===================================================== -->
-<section id="countdown">
-    <div class="container center fade">
-        <div class="kicker">SAVE THE DATE</div>
-        <h2 class="title">Menuju Hari Bahagia</h2>
-        
-        <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Flower Divider">
-
-        <div class="countdown">
-            <div class="time-box"><strong id="days">0</strong><span>Hari</span></div>
-            <div class="time-box"><strong id="hours">0</strong><span>Jam</span></div>
-            <div class="time-box"><strong id="minutes">0</strong><span>Menit</span></div>
-            <div class="time-box"><strong id="seconds">0</strong><span>Detik</span></div>
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     RANGKAIAN ACARA
-===================================================== -->
-<section id="acara">
-    <div class="container">
-        <div class="center fade">
-            <div class="kicker">WEDDING EVENT</div>
-            <h2 class="title">Rangkaian Acara</h2>
-            <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Flower Header">
-        </div>
-
-        <div class="grid two" style="margin-top: 20px;">
-            
-            <!-- AKAD -->
-            <div class="card center fade">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">Akad Nikah</h3>
-                <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Divider">
-                
-                <p style="color: var(--gold-primary); font-weight: 600;">Rabu, 23 September 2026</p>
-                <p style="color: var(--text-muted); margin: 5px 0 15px;">09.00 WIB s.d. Selesai</p>
-                
-                <p style="font-weight: 600; color: var(--text-light);">Kediaman Mempelai Putri</p>
-                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-                    Jl. Dewi Sartika IV RT. 3 RW. 9, Temas, Batu, Kota Batu
-                </p>
-
-                <a class="btn" target="_blank" href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6">📍 Lihat Lokasi</a>
-            </div>
-
-            <!-- RESEPSI -->
-            <div class="card center fade">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">Resepsi</h3>
-                <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Divider">
-                
-                <p style="color: var(--gold-primary); font-weight: 600;">Rabu, 23 September 2026</p>
-                <p style="color: var(--text-muted); margin: 5px 0 15px;">12.00 WIB s.d. Selesai</p>
-                
-                <p style="font-weight: 600; color: var(--text-light);">Kediaman Mempelai Putri</p>
-                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-                    Jl. Dewi Sartika IV RT. 3 RW. 9, Temas, Batu, Kota Batu
-                </p>
-
-                <a class="btn" target="_blank" href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6">📍 Lihat Lokasi</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     WEDDING GIFT
-===================================================== -->
-<section id="gift">
-    <div class="container">
-        <div class="center fade">
-            <div class="kicker">WEDDING GIFT</div>
-            <h2 class="title">Tanda Kasih</h2>
-            <p style="color: var(--text-muted); max-width: 500px; margin: auto;">
-                Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui rekening berikut:
-            </p>
-            <img src="Gambar-3.png" class="flower-screen flower-divider-slim" alt="Divider">
-        </div>
-
-        <div style="max-width: 550px; margin: 30px auto;" class="fade">
-            <div class="bank-card">
-                <img src="Gambar-2.png" class="flower-screen" style="width: 120px; display: block; margin: 0 auto 10px;" alt="Bank Ornament">
-                
-                <h3 style="font-family: 'Cinzel', serif; color: var(--gold-primary); font-size: 22px;">BANK BRI</h3>
-                <div class="account-number" id="account">312301042920536</div>
-                <p style="color: var(--text-muted);">a.n. <b style="color: var(--text-light);">SELLA GUSTI SHAKIRA</b></p>
-                
-                <br>
-                <button class="btn" onclick="copyAccount()">📋 SALIN NOMOR REKENING</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     RSVP & UCAPAN
-===================================================== -->
-<section id="rsvp">
-    <div class="container">
-        <div class="center fade">
-            <div class="kicker">PLEASE CONFIRM</div>
-            <h2 class="title">RSVP & Ucapan</h2>
-            <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Flower Header">
-        </div>
-
-        <form class="card fade" style="max-width: 600px; margin: 20px auto;" onsubmit="sendRSVP(event)">
-            <label style="color: var(--gold-light); font-size: 13px;">Nama Lengkap</label>
-            <input id="guestName" required placeholder="Masukkan Nama Anda">
-
-            <label style="color: var(--gold-light); font-size: 13px;">Konfirmasi Kehadiran</label>
-            <select id="attendance" required>
-                <option value="">Pilih Kehadiran...</option>
-                <option>Hadir</option>
-                <option>Tidak dapat hadir</option>
-            </select>
-
-            <label style="color: var(--gold-light); font-size: 13px;">Jumlah Tamu</label>
-            <select id="guestCount">
-                <option>1 Orang</option>
-                <option>2 Orang</option>
-                <option>3 Orang</option>
-                <option>4 Orang</option>
-            </select>
-
-            <label style="color: var(--gold-light); font-size: 13px;">Ucapan & Doa</label>
-            <textarea id="message" style="min-height: 100px;" placeholder="Tuliskan ucapan & doa terbaik..."></textarea>
-
-            <div class="center">
-                <button class="btn" type="submit">💌 KIRIM VIA WHATSAPP</button>
-            </div>
-        </form>
-    </div>
-</section>
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-<footer class="center" style="position: relative; padding: 60px 20px 40px; background: var(--maroon-dark);">
-    <div style="position: relative; z-index: 2;">
-        <img src="Gambar-1.png" class="flower-screen flower-divider-large" alt="Footer Flower">
-        
-        <h2 class="script-title">Arif & Sella</h2>
-        <p style="color: var(--text-muted); margin-top: 10px;">Terima kasih atas doa & restu Anda.</p>
-        <p style="color: var(--gold-primary); letter-spacing: 2px; font-weight: 600; margin-top: 15px;">
-            #SELLAmanyadenganARIF
-        </p>
-    </div>
-</footer>
-
-<!-- =====================================================
-     MUSIC & AUDIO
-===================================================== -->
-<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
-<audio id="music" loop>
-    <source src="wedding-music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-<script>
-
-/* URL PARAM NAMA TAMU */
-const params = new URLSearchParams(window.location.search);
-const guest = params.get("to");
-if (guest) {
-    document.getElementById("guestDisplay").textContent = guest;
-}
-
-/* OPEN INVITATION */
-function openInvitation() {
-    document.getElementById("opening").classList.add("hide");
-    document.body.classList.remove("locked");
-    const music = document.getElementById("music");
-    music.play().then(() => {
-        document.getElementById("musicBtn").textContent = "⏸";
-    }).catch(() => {});
-}
-
-/* COUNTDOWN */
-const weddingDate = new Date("September 23, 2026 09:00:00 GMT+0700").getTime();
-function updateCountdown() {
-    const now = new Date().getTime();
-    let distance = weddingDate - now;
-    if (distance < 0) distance = 0;
-
-    document.getElementById("days").textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").textContent = Math.floor((distance % (1000 * 60)) / 1000);
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-/* SALIN REKENING */
-function copyAccount() {
-    const account = "312301042920536";
-    navigator.clipboard.writeText(account).then(() => {
-        alert("Nomor rekening BRI berhasil disalin.");
-    }).catch(() => {
-        alert("Nomor rekening: " + account);
-    });
-}
-
-/* RSVP WHATSAPP */
-function sendRSVP(event) {
-    event.preventDefault();
-    const name = document.getElementById("guestName").value;
-    const attendance = document.getElementById("attendance").value;
-    const count = document.getElementById("guestCount").value;
-    const message = document.getElementById("message").value;
-
-    const text = `Assalamu'alaikum.\nHalo Arif & Sella,\n\nNama: ${name}\nKonfirmasi Kehadiran: ${attendance}\nJumlah Tamu: ${count}\nUcapan & Doa: ${message}\n\n#SELLAmanyadenganARIF`;
-    window.open("https://wa.me/6287759744620?text=" + encodeURIComponent(text), "_blank");
-}
-
-/* MUSIC TOGGLE */
-function toggleMusic() {
-    const music = document.getElementById("music");
-    const button = document.getElementById("musicBtn");
-    if (music.paused) {
-        music.play().then(() => { button.textContent = "⏸"; });
-    } else {
-        music.pause();
-        button.textContent = "♫";
-    }
-}
-
-/* SCROLL ANIMATION */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-    });
-}, { threshold: 0.12 });
 
-document.querySelectorAll(".fade").forEach(element => observer.observe(element));
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            overflow-x: hidden;
+        }
 
-</script>
+        /* Container Utama Undangan */
+        .invitation-card {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            height: 840px;
+            background: url('texture-paper.jpg') center/cover no-repeat;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 40px;
+            border-radius: 12px;
+        }
 
+        /* Bingkai Ukiran Gebyok Jawa */
+        .gebyok-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('gebyok-frame.jpg') center/100% 100% no-repeat;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Hiasan Janur Kuning di Samping Top Left & Right */
+        .janur-left, .janur-right {
+            position: absolute;
+            top: -20px;
+            width: 90px;
+            height: auto;
+            z-index: 6;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .janur-left {
+            left: -10px;
+            transform: scaleX(-1) rotate(15deg);
+        }
+
+        .janur-right {
+            right: -10px;
+            transform: rotate(15deg);
+        }
+
+        /* Hiasan Bunga Burgundy di Sudut Bawah */
+        .flower-burgundy-bottom {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 220px;
+            z-index: 6;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            pointer-events: none;
+        }
+
+        .flower-burgundy-top {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 180px;
+            transform: rotate(180deg);
+            z-index: 6;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+            pointer-events: none;
+        }
+
+        /* Canvas Animasi Kupu-Kupu Transparan (Chroma Key) */
+        #butterflyCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10; /* Di atas elemen isi undangan */
+            pointer-events: none;
+        }
+
+        /* Konten Isi Undangan */
+        .content {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            color: #4a2c11;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .gunungan-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            animation: pulseGunungan 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGunungan {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7a1c1c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .mempelai {
+            font-family: 'Pinyon Script', 'Brush Script MT', cursive, serif;
+            font-size: 36px;
+            color: #5c0612;
+            margin: 15px 0;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .ampersand {
+            font-size: 24px;
+            color: #8b0000;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .date-box {
+            border-top: 1px solid #8b0000;
+            border-bottom: 1px solid #8b0000;
+            padding: 10px 0;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .btn-open {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 25px;
+            background-color: #7a1c1c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(122, 28, 28, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-open:hover {
+            background-color: #5c0612;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div class="gebyok-frame"></div>
+        <img src="janur-hanging.png" class="janur-left" alt="Janur Kiri">
+        <img src="janur-hanging.png" class="janur-right" alt="Janur Kanan">
+        <img src="flower-burgundy.jpg" class="flower-burgundy-top" alt="Bunga Atas">
+        <img src="flower-burgundy.jpg" class="flower-burgundy-bottom" alt="Bunga Bawah">
+
+        <canvas id="butterflyCanvas"></canvas>
+
+        <video id="butterflyVideo" src="butterfly.mp4" autoplay loop muted playsinline style="display: none;"></video>
+
+        <div class="content">
+            <img src="gunungan-logo.png" class="gunungan-logo" alt="Logo Gunungan Jawa">
+            <p class="subtitle">UNDANGAN PERNIKAHAN</p>
+
+            <h1 class="mempelai">Raden Mas Arya</h1>
+            <span class="ampersand">&</span>
+            <h1 class="mempelai">Nimas Ayu Lestari</h1>
+
+            <div class="date-box">
+                <p>SABTU, 24 OKTOBER 2026</p>
+                <p style="font-size: 12px; margin-top: 4px; color: #666;">GEDUNG AGUNG YOGYAKARTA</p>
+            </div>
+
+            <button class="btn-open" onclick="playAudio()">Buka Undangan</button>
+        </div>
+    </div>
+
+    <script>
+        // JS Chroma Key (Menghapus latar hijau/green screen dari video butterfly.mp4)
+        const video = document.getElementById('butterflyVideo');
+        const canvas = document.getElementById('butterflyCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function processChromaKey() {
+            if (video.paused || video.ended) {
+                requestAnimationFrame(processChromaKey);
+                return;
+            }
+
+            // Sesuaikan ukuran canvas dengan tampilan elemen
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+
+            // Gambar frame video ke canvas
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Ambil data piksel canvas
+            let frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let length = frame.data.length;
+
+            // Algoritma Chroma Key (Filter warna hijau)
+            for (let i = 0; i < length; i += 4) {
+                let r = frame.data[i];
+                let g = frame.data[i + 1];
+                let b = frame.data[i + 2];
+
+                // Deteksi warna hijau dominan (Green Screen)
+                if (g > 90 && r < 130 && b < 130 && g > r * 1.15 && g > b * 1.15) {
+                    frame.data[i + 3] = 0; // Buat piksel hijau menjadi transparan
+                }
+            }
+
+            // Tampilkan kembali piksel yang sudah diproses
+            ctx.putImageData(frame, 0, 0);
+
+            requestAnimationFrame(processChromaKey);
+        }
+
+        // Jalankan proses saat video mulai diputar
+        video.addEventListener('play', () => {
+            requestAnimationFrame(processChromaKey);
+        });
+
+        // Pastikan video otomatis memutar saat dimuat
+        window.addEventListener('load', () => {
+            video.play().catch(err => {
+                console.log("Autoplay dicegah oleh browser, membutuhkan interaksi pengguna.");
+            });
+        });
+
+        function playAudio() {
+            alert("Membuka Undangan...");
+        }
+    </script>
 </body>
 </html>
