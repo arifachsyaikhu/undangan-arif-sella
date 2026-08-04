@@ -1,29 +1,38 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Undangan Pernikahan Arif & Sella</title>
+<title>Arif & Sella | Wedding Invitation</title>
 
 <meta name="description"
-content="Undangan Pernikahan Arif & Sella - Rabu, 23 September 2026">
+content="The Wedding of Arif & Sella - 23 September 2026">
 
 <style>
 
-/* =========================================================
-   1. GLOBAL
-========================================================= */
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 :root {
-    --maroon: #5b101d;
-    --maroon-dark: #350710;
-    --gold: #c9a227;
-    --gold-light: #ead58a;
-    --cream: #f7f0e5;
-    --white: #fffaf3;
-    --brown: #301b18;
+    --maroon: #64142b;
+    --burgundy: #4b0b20;
+    --deep-maroon: #350814;
+
+    --pink: #d87591;
+    --soft-pink: #f4b7c5;
+    --light-pink: #f9dce3;
+
+    --cream: #f7f1e9;
+    --ivory: #fffdf9;
+
+    --gold: #b8944d;
+    --gold-light: #d8bd7c;
+
+    --sage: #78856a;
+
+    --text: #402a2a;
 }
 
 * {
@@ -37,11 +46,18 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: var(--cream);
-    color: var(--brown);
-    line-height: 1.7;
+    margin: 0;
     overflow-x: hidden;
+
+    color: var(--text);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        var(--cream);
 }
 
 body.locked {
@@ -53,1526 +69,1718 @@ a {
     color: inherit;
 }
 
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-}
-
 button {
+    font-family: inherit;
     cursor: pointer;
-}
-
-.container {
-    width: min(1100px, 92%);
-    margin: auto;
 }
 
 section {
     position: relative;
-    padding: 90px 20px;
+
+    padding:
+        90px
+        20px;
+
     overflow: hidden;
+}
+
+.container {
+    width:
+        min(
+            1100px,
+            92%
+        );
+
+    margin:
+        auto;
 }
 
 .center {
     text-align: center;
 }
 
+
+/* =====================================================
+   TEXT
+===================================================== */
+
 .kicker {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+
+    color:
+        var(--gold);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        4px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
 }
 
 .title {
-    margin: 10px 0 20px;
-    color: var(--maroon);
-    font-size: clamp(32px, 5vw, 58px);
-    line-height: 1.2;
+
+    margin:
+        12px
+        0
+        25px;
+
+    color:
+        var(--maroon);
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            58px
+        );
+
+    font-weight:
+        normal;
+
+    line-height:
+        1.2;
 }
 
 .ornament {
-    color: var(--gold);
-    margin: 18px 0 28px;
-    letter-spacing: 10px;
-    font-size: 20px;
-}
 
-.maroon {
-    color: var(--cream);
-    background: var(--maroon);
-}
+    margin:
+        20px
+        0
+        30px;
 
-.maroon .title {
-    color: var(--cream);
-}
+    color:
+        var(--gold);
 
-.pattern {
-    background-image:
-        linear-gradient(rgba(91,16,29,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(91,16,29,.035) 1px, transparent 1px);
-    background-size: 40px 40px;
+    letter-spacing:
+        10px;
 }
 
 
-/* =========================================================
-   2. TOMBOL
-========================================================= */
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    overflow: hidden;
 
-    padding: 13px 28px;
+    position:
+        relative;
 
-    color: var(--maroon-dark);
-    background: linear-gradient(
-        135deg,
-        var(--gold-light),
-        var(--gold),
-        var(--gold-light)
-    );
+    display:
+        inline-flex;
 
-    border: 1px solid var(--gold-light);
-    border-radius: 50px;
+    align-items:
+        center;
 
-    font-weight: bold;
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    overflow:
+        hidden;
+
+    padding:
+        13px
+        28px;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--maroon),
+            var(--burgundy)
+        );
+
+    border:
+        1px solid
+        var(--gold);
+
+    border-radius:
+        50px;
+
+    font-weight:
+        bold;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.2);
+        0 8px 25px
+        rgba(
+            77,
+            10,
+            32,
+            .22
+        );
 
-    transition: .35s;
+    transition:
+        .35s;
 }
 
 .btn:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(
+            -4px
+        );
+
     box-shadow:
-        0 14px 30px rgba(0,0,0,.25);
+        0 15px 35px
+        rgba(
+            77,
+            10,
+            32,
+            .3
+        );
 }
 
 .btn::after {
-    content: "";
 
-    position: absolute;
-    top: 0;
-    left: -120%;
+    content:
+        "";
 
-    width: 70%;
-    height: 100%;
+    position:
+        absolute;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.5),
-        transparent
-    );
+    top:
+        0;
 
-    transform: skewX(-20deg);
+    left:
+        -120%;
 
-    animation: buttonShine 5s ease-in-out infinite;
+    width:
+        70%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                255,
+                255,
+                255,
+                .4
+            ),
+            transparent
+        );
+
+    transform:
+        skewX(
+            -20deg
+        );
+
+    animation:
+        shine
+        5s
+        infinite;
 }
 
-@keyframes buttonShine {
+@keyframes shine {
 
     0%,
     55% {
-        left: -120%;
+        left:
+            -120%;
     }
 
     75%,
     100% {
-        left: 140%;
+        left:
+            140%;
     }
-
 }
 
 
-/* =========================================================
-   3. COVER
-========================================================= */
+/* =====================================================
+   COVER / OPENING
+===================================================== */
 
 #opening {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 1000;
+    z-index:
+        1000;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    padding: 20px;
+    padding:
+        20px;
 
-    color: var(--cream);
+    overflow:
+        hidden;
 
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(91,16,29,.92),
-            rgba(53,7,16,.98)
-        );
-
-    transition: 1s;
-
-}
-
-#opening.hide {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-}
-
-.open-card {
-
-    position: relative;
-
-    width: min(650px, 94%);
-
-    padding: 55px 28px;
-
-    overflow: hidden;
-
-    border:
-
-        1px solid
-
-        rgba(234,213,138,.7);
-
-    border-radius: 35px;
+    color:
+        var(--text);
 
     background:
 
         linear-gradient(
-            145deg,
-            rgba(91,16,29,.85),
-            rgba(53,7,16,.95)
+            rgba(
+                245,
+                239,
+                232,
+                .82
+            ),
+            rgba(
+                245,
+                239,
+                232,
+                .9
+            )
+        ),
+
+        url(
+            "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=2000&q=85"
+        )
+
+        center /
+        cover;
+
+    transition:
+        1s;
+}
+
+#opening.hide {
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+}
+
+
+/* =====================================================
+   COVER FLOWERS
+===================================================== */
+
+.cover-flower {
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    z-index:
+        1;
+
+    pointer-events:
+        none;
+
+    animation:
+        flowerFloat
+        7s
+        ease-in-out
+        infinite;
+}
+
+.cover-flower.left {
+
+    left:
+        -45px;
+
+    bottom:
+        -20px;
+}
+
+.cover-flower.right {
+
+    right:
+        -45px;
+
+    bottom:
+        -20px;
+
+    animation-delay:
+        -3s;
+}
+
+.flower-bloom {
+
+    position:
+        absolute;
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #fff
+            0 10%,
+
+            #f2c3cf
+            11% 24%,
+
+            #d87591
+            25% 42%,
+
+            #64142b
+            43% 63%,
+
+            #4b0b20
+            64% 100%
         );
 
     box-shadow:
+        0 5px 20px
+        rgba(
+            80,
+            10,
+            30,
+            .25
+        );
+}
 
-        0 0 80px rgba(0,0,0,.6),
+.cover-flower.left
+.flower-bloom:nth-child(1) {
 
-        inset 0 0 50px rgba(201,162,39,.08);
+    left:
+        40px;
+
+    bottom:
+        30px;
+
+}
+
+.cover-flower.left
+.flower-bloom:nth-child(2) {
+
+    left:
+        110px;
+
+    bottom:
+        5px;
+
+    transform:
+        scale(.65);
+
+}
+
+.cover-flower.left
+.flower-bloom:nth-child(3) {
+
+    left:
+        0;
+
+    bottom:
+        100px;
+
+    transform:
+        scale(.55);
+
+}
+
+.cover-flower.right
+.flower-bloom:nth-child(1) {
+
+    right:
+        40px;
+
+    bottom:
+        30px;
+
+}
+
+.cover-flower.right
+.flower-bloom:nth-child(2) {
+
+    right:
+        110px;
+
+    bottom:
+        5px;
+
+    transform:
+        scale(.65);
+
+}
+
+.cover-flower.right
+.flower-bloom:nth-child(3) {
+
+    right:
+        0;
+
+    bottom:
+        100px;
+
+    transform:
+        scale(.55);
+
+}
+
+
+/* =====================================================
+   COVER PANEL
+===================================================== */
+
+.open-card {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    width:
+        min(
+            500px,
+            90vw
+        );
+
+    min-height:
+        650px;
+
+    padding:
+        70px
+        45px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+
+    border:
+        1.5px solid
+        var(--gold-light);
+
+    border-radius:
+        50%
+        50%
+        45%
+        45%;
+
+    box-shadow:
+
+        0 20px 70px
+        rgba(
+            70,
+            20,
+            30,
+            .2
+        ),
+
+        inset
+        0 0 35px
+        rgba(
+            184,
+            148,
+            77,
+            .08
+        );
 
 }
 
 .open-card::before {
 
-    content: "❀";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: -30px;
+    inset:
+        12px;
 
-    left: -15px;
+    border:
+        1px solid
+        rgba(
+            184,
+            148,
+            77,
+            .35
+        );
 
-    color: var(--gold);
+    border-radius:
+        50%
+        50%
+        45%
+        45%;
 
-    font-size: 130px;
-
-    opacity: .25;
-
-    animation: flowerFloat 6s ease-in-out infinite;
-
+    pointer-events:
+        none;
 }
 
-.open-card::after {
 
-    content: "❀";
+/* =====================================================
+   MONOGRAM
+===================================================== */
 
-    position: absolute;
+.monogram {
 
-    right: -15px;
+    margin:
+        18px
+        0;
 
-    bottom: -40px;
+    color:
+        var(--gold);
 
-    color: var(--gold);
+    font-family:
+        "Times New Roman",
+        serif;
 
-    font-size: 130px;
+    font-size:
+        95px;
 
-    opacity: .25;
+    font-weight:
+        normal;
 
-    animation: flowerFloat 7s ease-in-out infinite reverse;
+    line-height:
+        .8;
 
+    letter-spacing:
+        -25px;
+
+    padding-right:
+        25px;
+
+    text-shadow:
+        0 2px 2px
+        rgba(
+            100,
+            60,
+            20,
+            .1
+        );
 }
 
 .open-card h1 {
 
-    color: var(--gold-light);
+    color:
+        var(--maroon);
 
-    font-size: clamp(48px, 9vw, 85px);
+    font-size:
+        23px;
 
-    font-weight: normal;
+    letter-spacing:
+        2px;
 
-    line-height: 1.1;
-
-    animation: goldShimmer 8s linear infinite;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #c9a227,
-            #fff3b5,
-            #ead58a,
-            #c9a227
-        );
-
-    background-size: 300%;
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
+    margin:
+        10px 0
+        15px;
 }
 
 .guest-label {
 
-    margin-top: 25px;
+    margin-top:
+        10px;
 
+    font-style:
+        italic;
 }
 
 .guest-name {
 
-    margin: 5px 0 20px;
+    margin:
+        7px 0
+        25px;
 
-    color: var(--gold-light);
+    color:
+        var(--maroon);
 
-    font-size: 25px;
+    font-size:
+        18px;
 
-    font-weight: bold;
-
+    font-weight:
+        bold;
 }
 
 .open-date {
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 
-    color: var(--gold-light);
+    color:
+        var(--gold);
 
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
 }
 
 
-/* =========================================================
-   4. HERO
-========================================================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
 
-    min-height: 100vh;
+    min-height:
+        100vh;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    text-align: center;
+    color:
+        white;
 
-    color: var(--cream);
+    text-align:
+        center;
 
     background:
 
         linear-gradient(
-            rgba(53,7,16,.65),
-            rgba(53,7,16,.95)
+            rgba(
+                75,
+                11,
+                32,
+                .72
+            ),
+            rgba(
+                53,
+                8,
+                20,
+                .88
+            )
         ),
 
         url(
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
+            "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
         )
 
-        center / cover fixed;
-
+        center /
+        cover
+        fixed;
 }
 
 .hero h1 {
 
-    font-size: clamp(60px, 11vw, 120px);
-
-    font-weight: normal;
-
-    line-height: 1;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #c9a227,
-            #fff3b5,
-            #ead58a,
-            #c9a227
+    font-size:
+        clamp(
+            60px,
+            11vw,
+            120px
         );
 
-    background-size: 300%;
+    font-weight:
+        normal;
 
-    -webkit-background-clip: text;
+    line-height:
+        1;
 
-    -webkit-text-fill-color: transparent;
+    color:
+        var(--light-pink);
 
-    animation: goldShimmer 8s linear infinite;
-
+    text-shadow:
+        0 5px 25px
+        rgba(
+            0,
+            0,
+            0,
+            .3
+        );
 }
 
 .hero .amp {
 
-    color: var(--cream);
+    color:
+        var(--gold-light);
 
-    font-size: .6em;
-
+    font-size:
+        .65em;
 }
 
 .date {
 
-    margin: 25px 0;
+    margin:
+        25px 0;
 
-    letter-spacing: 5px;
+    letter-spacing:
+        4px;
 
+    color:
+        white;
 }
 
 
-/* =========================================================
-   5. NAVIGASI
-========================================================= */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav {
 
-    position: sticky;
+    position:
+        sticky;
 
-    top: 0;
+    top:
+        0;
 
-    z-index: 100;
+    z-index:
+        100;
 
     background:
+        rgba(
+            53,
+            8,
+            20,
+            .96
+        );
 
-        rgba(53,7,16,.95);
-
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(
+            12px
+        );
 
     border-bottom:
-
         1px solid
-
-        rgba(201,162,39,.5);
-
+        rgba(
+            216,
+            189,
+            124,
+            .5
+        );
 }
 
 .nav-inner {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 25px;
+    gap:
+        25px;
 
-    padding: 14px;
+    padding:
+        14px;
 
-    overflow-x: auto;
+    overflow-x:
+        auto;
 
-    white-space: nowrap;
-
+    white-space:
+        nowrap;
 }
 
 nav a {
 
-    color: var(--cream);
+    color:
+        var(--cream);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    transition: .3s;
-
+    transition:
+        .3s;
 }
 
 nav a:hover {
 
-    color: var(--gold-light);
-
+    color:
+        var(--gold-light);
 }
 
 
-/* =========================================================
-   6. AYAT
-========================================================= */
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.pattern {
+
+    background:
+
+        linear-gradient(
+            rgba(
+               255,
+                255,
+                255,
+                .5
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                .5
+            )
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 30px,
+            rgba(
+                100,
+                20,
+                43,
+                .025
+            ) 31px
+        );
+}
+
+.maroon {
+
+    color:
+        var(--cream);
+
+    background:
+        var(--burgundy);
+}
+
+.maroon .title {
+
+    color:
+        var(--light-pink);
+}
+
+.maroon .kicker {
+
+    color:
+        var(--gold-light);
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
 
 .quote-box {
 
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin: auto;
-
+    margin:
+        auto;
 }
 
 .quote-box .title {
 
-    font-size: clamp(25px, 4vw, 43px);
+    font-size:
+        clamp(
+            25px,
+            4vw,
+            42px
+        );
 
-    line-height: 1.7;
+    line-height:
+        1.8;
 
+    font-style:
+        italic;
 }
 
 
-/* =========================================================
-   7. MEMPELAI
-========================================================= */
+/* =====================================================
+   COUPLE
+===================================================== */
 
 .grid {
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 30px;
-
+    gap:
+        30px;
 }
 
 .two {
 
     grid-template-columns:
-
-        repeat(2, 1fr);
-
+        repeat(
+            2,
+            1fr
+        );
 }
 
 .card {
 
-    padding: 32px;
+    padding:
+        35px;
 
     border:
-
         1px solid
+        rgba(
+            184,
+            148,
+            77,
+            .35
+        );
 
-        rgba(201,162,39,.35);
-
-    border-radius: 25px;
+    border-radius:
+        25px;
 
     background:
-
-        rgba(255,250,243,.9);
+        rgba(
+            255,
+            253,
+            249,
+            .95
+        );
 
     box-shadow:
-
         0 15px 45px
+        rgba(
+            80,
+            20,
+            30,
+            .08
+        );
 
-        rgba(91,16,29,.08);
-
-    transition: .5s;
-
+    transition:
+        .5s;
 }
 
 .card:hover {
 
-    transform: translateY(-7px);
+    transform:
+        translateY(
+            -7px
+        );
 
     box-shadow:
-
         0 25px 60px
-
-        rgba(91,16,29,.15);
-
+        rgba(
+            80,
+            20,
+            30,
+            .15
+        );
 }
 
 .couple {
 
-    text-align: center;
-
+    text-align:
+        center;
 }
 
 .photo {
 
-    width: 190px;
+    width:
+        190px;
 
-    height: 240px;
+    height:
+        240px;
 
-    display: block;
+    object-fit:
+        cover;
 
-    margin: auto auto 20px;
+    display:
+        block;
 
-    padding: 6px;
+    margin:
+        0 auto
+        20px;
 
-    object-fit: cover;
+    padding:
+        6px;
 
     border:
-
-        5px solid
-
+        4px solid
         var(--gold);
 
     border-radius:
-
         110px
-
         110px
-
         25px
-
         25px;
 
-    background: var(--cream);
-
-    transition: .7s;
-
-}
-
-.photo:hover {
-
-    transform:
-
-        scale(1.05)
-
-        rotate(-2deg);
-
-    box-shadow:
-
-        0 20px 40px
-
-        rgba(91,16,29,.3);
-
+    background:
+        white;
 }
 
 .couple h3 {
 
-    color: var(--maroon);
+    color:
+        var(--maroon);
 
-    font-size: 28px;
+    font-size:
+        27px;
 
+    margin-bottom:
+        10px;
 }
 
 .address {
 
-    margin-top: 12px;
+    margin-top:
+        12px;
 
-    font-size: 13px;
-
+    font-size:
+        13px;
 }
 
 
-/* =========================================================
-   8. COUNTDOWN
-========================================================= */
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 .countdown {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 15px;
+    gap:
+        15px;
 
-    margin-top: 35px;
-
+    margin-top:
+        35px;
 }
 
 .time-box {
 
-    min-width: 95px;
+    min-width:
+        100px;
 
-    padding: 17px;
+    padding:
+        18px;
 
-    color: var(--maroon);
+    color:
+        var(--maroon);
 
-    background: var(--white);
+    background:
+        var(--ivory);
 
     border:
-
         1px solid
-
         var(--gold);
 
-    border-radius: 18px;
-
-    box-shadow:
-
-        0 10px 25px
-
-        rgba(0,0,0,.15);
-
+    border-radius:
+        18px;
 }
 
 .time-box strong {
 
-    display: block;
+    display:
+        block;
 
-    font-size: 35px;
+    font-size:
+        35px;
 
-    line-height: 1;
-
+    line-height:
+        1;
 }
 
 .time-box span {
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    text-transform: uppercase;
-
+    text-transform:
+        uppercase;
 }
 
 
-/* =========================================================
-   9. ACARA
-========================================================= */
+/* =====================================================
+   EVENT
+===================================================== */
 
 .event {
 
-    text-align: center;
-
+    text-align:
+        center;
 }
 
 .event h3 {
 
-    color: var(--maroon);
+    color:
+        var(--maroon);
 
-    font-size: 29px;
-
+    font-size:
+        28px;
 }
 
 .divider {
 
-    height: 1px;
+    height:
+        1px;
 
-    margin: 25px 0;
+    margin:
+        25px 0;
 
     background:
 
         linear-gradient(
-
             90deg,
-
             transparent,
-
             var(--gold),
-
             transparent
-
         );
-
 }
 
 
-/* =========================================================
-   11. WEDDING GIFT
-========================================================= */
+/* =====================================================
+   GIFT
+===================================================== */
 
 .gift {
 
-    max-width: 600px;
+    max-width:
+        600px;
 
-    margin: 35px auto;
-
+    margin:
+        35px auto;
 }
 
 .bank {
 
-    padding: 35px;
+    padding:
+        40px;
 
-    color: var(--cream);
+    color:
+        white;
 
-    text-align: center;
+    text-align:
+        center;
 
     background:
 
         linear-gradient(
-
             135deg,
-
             var(--maroon),
-
-            var(--maroon-dark)
-
+            var(--deep-maroon)
         );
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
+    border:
+        1px solid
+        var(--gold);
 }
 
 .bank strong {
 
-    color: var(--gold-light);
+    color:
+        var(--gold-light);
 
-    font-size: 25px;
-
+    font-size:
+        25px;
 }
 
 .account-number {
 
-    margin: 12px 0;
+    margin:
+        15px 0;
 
-    color: var(--gold-light);
+    color:
+        var(--light-pink);
 
-    font-size: 25px;
+    font-size:
+        25px;
 
-    letter-spacing: 2px;
-
+    letter-spacing:
+        2px;
 }
 
 
-/* =========================================================
-   12. RSVP
-========================================================= */
+/* =====================================================
+   RSVP
+===================================================== */
 
 .form {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    margin: 35px auto;
-
+    margin:
+        35px auto;
 }
 
 input,
-
 select,
-
 textarea {
 
-    width: 100%;
+    width:
+        100%;
 
-    padding: 14px 16px;
+    padding:
+        14px
+        16px;
 
     margin:
-
         7px 0
-
         18px;
 
-    color: var(--brown);
+    color:
+        var(--text);
 
-    background: var(--white);
+    background:
+        var(--ivory);
 
     border:
-
         1px solid
+        rgba(
+            184,
+            148,
+            77,
+            .5
+        );
 
-        rgba(201,162,39,.5);
+    border-radius:
+        12px;
 
-    border-radius: 12px;
-
-    outline: none;
-
+    outline:
+        none;
 }
 
 textarea {
 
-    min-height: 120px;
+    min-height:
+        120px;
 
-    resize: vertical;
-
-}
-
-input:focus,
-
-select:focus,
-
-textarea:focus {
-
-    border-color: var(--gold);
-
-    box-shadow:
-
-        0 0 0 3px
-
-        rgba(201,162,39,.12);
-
+    resize:
+        vertical;
 }
 
 
-/* =========================================================
-   13. FOOTER
-========================================================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
 
-    position: relative;
+    padding:
+        75px
+        20px;
 
-    padding: 75px 20px;
+    color:
+        white;
 
-    overflow: hidden;
-
-    color: var(--cream);
-
-    text-align: center;
+    text-align:
+        center;
 
     background:
-
-        var(--maroon-dark);
-
+        var(--deep-maroon);
 }
 
 footer h2 {
 
-    color: var(--gold-light);
+    color:
+        var(--light-pink);
 
-    font-size: 45px;
+    font-size:
+        45px;
 
-    font-weight: normal;
-
+    font-weight:
+        normal;
 }
 
 .hashtag {
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 
-    color: var(--gold-light);
+    color:
+        var(--gold-light);
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
-    letter-spacing: 2px;
-
-    animation: softGlow 3s ease-in-out infinite;
-
+    letter-spacing:
+        2px;
 }
 
 
-/* =========================================================
-   14. MUSIK
-========================================================= */
+/* =====================================================
+   MUSIC
+===================================================== */
 
 .music {
 
-    position: fixed;
+    position:
+        fixed;
 
-    right: 18px;
+    right:
+        18px;
 
-    bottom: 18px;
+    bottom:
+        18px;
 
-    z-index: 200;
+    z-index:
+        200;
 
-    width: 55px;
+    width:
+        55px;
 
-    height: 55px;
+    height:
+        55px;
 
-    color: var(--gold-light);
+    color:
+        white;
 
-    background: var(--maroon);
+    background:
+        var(--maroon);
 
     border:
-
         1px solid
-
         var(--gold);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     box-shadow:
-
         0 8px 25px
-
-        rgba(0,0,0,.4);
-
-}
-
-
-/* =========================================================
-   15. ORNAMEN BUNGA
-========================================================= */
-
-.floral-corner {
-
-    position: fixed;
-
-    z-index: 150;
-
-    width: 190px;
-
-    height: 190px;
-
-    pointer-events: none;
-
-    opacity: .85;
-
-    filter:
-
-        drop-shadow(
-
-            0 8px 12px
-
-            rgba(0,0,0,.2)
-
+        rgba(
+            0,
+            0,
+            0,
+            .35
         );
-
 }
 
-.floral-tl {
 
-    top: -35px;
+/* =====================================================
+   FALLING PETALS
+===================================================== */
 
-    left: -35px;
+.petal-field {
 
-}
+    position:
+        fixed;
 
-.floral-tr {
-
-    top: -35px;
-
-    right: -35px;
-
-    transform: scaleX(-1);
-
-}
-
-.floral-bl {
-
-    bottom: -35px;
-
-    left: -35px;
-
-    transform: scaleY(-1);
-
-}
-
-.floral-br {
-
-    bottom: -35px;
-
-    right: -35px;
-
-    transform: scale(-1);
-
-}
-
-.flower {
-    position: absolute;
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fffaf3 0 10%,
-            #ead58a 11% 18%,
-            #c94f72 19% 38%,
-            #8b1e3f 39% 58%,
-            #ffffff 59% 72%,
-            transparent 73%
-        );
-
-    box-shadow:
-        0 0 0 8px rgba(255,255,255,.15),
-        0 0 25px rgba(201,79,114,.25);
-
-    animation:
-        flowerBreathe
-        5s
-        ease-in-out
-        infinite;
-}
-
-}
-
-.flower::before,
-
-.flower::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 55px;
-
-    height: 25px;
-
-    border:
-
-        2px solid
-
-        var(--gold);
-
-    border-radius:
-
-        100%
-
-        0
-
-        100%
-
+    inset:
         0;
 
+    z-index:
+        120;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
 }
-
-.flower::before {
-
-    top: 65px;
-
-    left: 45px;
-
-    transform: rotate(25deg);
-
-}
-
-.flower::after {
-
-    top: 100px;
-
-    left: 70px;
-
-    transform: rotate(-25deg);
-
-}
-
-
-/* =========================================================
-   16. DAUN
-========================================================= */
-
-.leaf {
-    position: absolute;
-    width: 70px;
-    height: 30px;
-
-    border: 2px solid #8b1e3f;
-
-    border-radius:
-        100%
-        0
-        100%
-        0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8b1e3f,
-            #c94f72
-        );
-
-    opacity: .85;
-
-    transform: rotate(30deg);
-
-    animation:
-        leafSway
-        6s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   17. KELopak JATUH
-========================================================= */
 
 .petal {
+
+    position:
+        absolute;
+
+    top:
+        -40px;
+
+    width:
+        13px;
+
+    height:
+        20px;
+
     background:
+
         linear-gradient(
             135deg,
-            #ffffff,
-            #f7b6c8,
-            #8b1e3f
+            white,
+            var(--soft-pink),
+            var(--pink),
+            var(--maroon)
         );
-}
 
+    border-radius:
+        70%
+        0
+        70%
+        0;
 
-/* =========================================================
-   18. SPARKLE
-========================================================= */
-
-.sparkle-field {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 121;
-
-    pointer-events: none;
-
-}
-
-.sparkle {
-
-    position: absolute;
-
-    width: 5px;
-
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: var(--gold-light);
-
-    box-shadow:
-
-        0 0 12px
-
-        4px
-
-        rgba(234,213,138,.6);
+    opacity:
+        .6;
 
     animation:
-
-        sparkle
-
-        3s
-
-        ease-in-out
-
+        petalFall
+        linear
         infinite;
-
 }
 
-.sparkle:nth-child(1) {
-
-    top: 20%;
-
-    left: 12%;
-
+.petal:nth-child(1) {
+    left: 5%;
+    animation-duration: 13s;
 }
 
-.sparkle:nth-child(2) {
-
-    top: 18%;
-
-    left: 83%;
-
-    animation-delay: -1s;
-
+.petal:nth-child(2) {
+    left: 18%;
+    animation-duration: 16s;
+    animation-delay: -5s;
 }
 
-.sparkle:nth-child(3) {
-
-    top: 70%;
-
-    left: 22%;
-
-    animation-delay: -2s;
-
+.petal:nth-child(3) {
+    left: 32%;
+    animation-duration: 14s;
+    animation-delay: -8s;
 }
 
-.sparkle:nth-child(4) {
-
-    top: 76%;
-
-    left: 74%;
-
-    animation-delay: -1.5s;
-
+.petal:nth-child(4) {
+    left: 48%;
+    animation-duration: 18s;
+    animation-delay: -12s;
 }
 
-.sparkle:nth-child(5) {
-
-    top: 35%;
-
-    left: 52%;
-
-    animation-delay: -.5s;
-
+.petal:nth-child(5) {
+    left: 63%;
+    animation-duration: 15s;
+    animation-delay: -4s;
 }
 
-.sparkle:nth-child(6) {
+.petal:nth-child(6) {
+    left: 77%;
+    animation-duration: 17s;
+    animation-delay: -10s;
+}
 
-    top: 55%;
-
-    left: 91%;
-
-    animation-delay: -2.5s;
-
+.petal:nth-child(7) {
+    left: 90%;
+    animation-duration: 14s;
+    animation-delay: -7s;
 }
 
 
-/* =========================================================
-   19. ANIMASI
-========================================================= */
-
-@keyframes flowerBreathe {
-
-    0%,
-    100% {
-
-        transform:
-
-            scale(1)
-
-            rotate(0deg);
-
-    }
-
-    50% {
-
-        transform:
-
-            scale(1.08)
-
-            rotate(5deg);
-
-    }
-
-}
-
-@keyframes leafSway {
-
-    0%,
-    100% {
-
-        transform:
-
-            rotate(30deg);
-
-    }
-
-    50% {
-
-        transform:
-
-            rotate(42deg);
-
-    }
-
-}
+/* =====================================================
+   ANIMATION
+===================================================== */
 
 @keyframes petalFall {
 
     0% {
 
         transform:
+            translateY(
+                -50px
+            )
+            rotate(
+                0deg
+            );
 
-            translateY(-50px)
-
-            rotate(0deg);
-
-        opacity: 0;
-
+        opacity:
+            0;
     }
 
     10% {
 
-        opacity: .7;
-
+        opacity:
+            .7;
     }
 
     50% {
 
         transform:
-
-            translate(40px, 55vh)
-
-            rotate(180deg);
-
+            translate(
+                40px,
+                55vh
+            )
+            rotate(
+                180deg
+            );
     }
 
     100% {
 
         transform:
+            translate(
+                -30px,
+                110vh
+            )
+            rotate(
+                360deg
+            );
 
-            translate(-30px, 110vh)
-
-            rotate(360deg);
-
-        opacity: 0;
-
+        opacity:
+            0;
     }
-
 }
 
-@keyframes sparkle {
+@keyframes flowerFloat {
 
     0%,
     100% {
 
-        transform: scale(.3);
-
-        opacity: .2;
-
+        transform:
+            translateY(
+                0
+            )
+            rotate(
+                0deg
+            );
     }
 
     50% {
 
-        transform: scale(1.8);
-
-        opacity: 1;
-
+        transform:
+            translateY(
+                -12px
+            )
+            rotate(
+                3deg
+            );
     }
-
 }
-
-@keyframes goldShimmer {
-
-    0% {
-
-        background-position:
-
-            0% center;
-
-    }
-
-    100% {
-
-        background-position:
-
-            300% center;
-
-    }
-
-}
-
-@keyframes softGlow {
-
-    0%,
-    100% {
-
-        text-shadow:
-
-            0 0 0
-
-            rgba(234,213,138,0);
-
-    }
-
-    50% {
-
-        text-shadow:
-
-            0 0 20px
-
-            rgba(234,213,138,.6);
-
-    }
-
-}
-
-
-/* =========================================================
-   20. SCROLL ANIMATION
-========================================================= */
 
 .fade {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
-
-        translateY(35px);
+        translateY(
+            35px
+        );
 
     transition:
+        opacity
+        .8s ease,
 
-        opacity .8s ease,
-
-        transform .8s ease;
-
+        transform
+        .8s ease;
 }
 
 .fade.show {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
-
-        translateY(0);
-
+        translateY(
+            0
+        );
 }
 
 
-/* =========================================================
-   21. RESPONSIVE
-========================================================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:700px) {
 
     section {
 
         padding:
-
             65px
-
             15px;
-
     }
 
     .two {
 
         grid-template-columns:
-
             1fr;
-
-    }
-
-    .gallery {
-
-        grid-template-columns:
-
-            repeat(2,1fr);
-
-    }
-
-    .gallery img {
-
-        height: 220px;
-
     }
 
     .nav-inner {
 
         justify-content:
-
             flex-start;
+    }
 
+    .open-card {
+
+        min-height:
+            580px;
+
+        padding:
+            55px
+            30px;
+    }
+
+    .monogram {
+
+        font-size:
+            75px;
+    }
+
+    .cover-flower {
+
+        transform:
+            scale(
+                .7
+            );
+    }
+
+    .cover-flower.right {
+
+        transform:
+            scale(
+                .7
+            );
     }
 
     .hero {
 
         background-attachment:
-
             scroll;
-
     }
 
-    .floral-corner {
+    .time-box {
 
-        transform:
-
-            scale(.7);
-
+        min-width:
+            75px;
     }
 
-    .floral-tr {
+    .time-box strong {
 
-        transform:
-
-            scaleX(-1)
-
-            scale(.7);
-
-    }
-
-    .floral-bl {
-
-        transform:
-
-            scaleY(-1)
-
-            scale(.7);
-
-    }
-
-    .floral-br {
-
-        transform:
-
-            scale(-1)
-
-            scale(.7);
-
+        font-size:
+            27px;
     }
 
 }
@@ -1584,130 +1792,83 @@ footer h2 {
 <body class="locked">
 
 
-<!-- =========================================================
-     ORNAMEN BUNGA
-========================================================= -->
-
-<div class="floral-corner floral-tl">
-
-    <div class="flower"></div>
-
-    <div
-        class="leaf"
-        style="
-        top:110px;
-        left:70px;
-        ">
-    </div>
-
-</div>
-
-
-<div class="floral-corner floral-tr">
-
-    <div class="flower"></div>
-
-    <div
-        class="leaf"
-        style="
-        top:110px;
-        left:70px;
-        ">
-    </div>
-
-</div>
-
-
-<div class="floral-corner floral-bl">
-
-    <div class="flower"></div>
-
-    <div
-        class="leaf"
-        style="
-        top:110px;
-        left:70px;
-        ">
-    </div>
-
-</div>
-
-
-<div class="floral-corner floral-br">
-
-    <div class="flower"></div>
-
-    <div
-        class="leaf"
-        style="
-        top:110px;
-        left:70px;
-        ">
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     KELOPAK BUNGA JATUH
-========================================================= -->
-
-<div class="petal-field">
-
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-    <span class="petal"></span>
-
-</div>
-
-
-<!-- =========================================================
-     SPARKLE EMAS
-========================================================= -->
-
-<div class="sparkle-field">
-
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-    <span class="sparkle"></span>
-
-</div>
-
-
-<!-- =========================================================
-     COVER
-========================================================= -->
+<!-- =====================================================
+     COVER OPENING
+===================================================== -->
 
 <div id="opening">
+
+
+    <!-- FLOWER LEFT -->
+
+    <div class="cover-flower left">
+
+        <div class="flower-bloom"></div>
+
+        <div class="flower-bloom"></div>
+
+        <div class="flower-bloom"></div>
+
+    </div>
+
+
+    <!-- FLOWER RIGHT -->
+
+    <div class="cover-flower right">
+
+        <div class="flower-bloom"></div>
+
+        <div class="flower-bloom"></div>
+
+        <div class="flower-bloom"></div>
+
+    </div>
+
+
+    <!-- CENTER PANEL -->
 
     <div class="open-card">
 
         <div class="kicker">
-            The Wedding of
+
+            The Wedding Of
+
         </div>
+
+
+        <div class="monogram">
+
+            S
+
+            <span>
+
+                A
+
+            </span>
+
+        </div>
+
 
         <h1>
-            Arif
-            <span style="color:white">
-                &
-            </span>
-            Sella
+
+            ARIF & SELLA
+
         </h1>
 
+
         <div class="ornament">
-            ✦ ❖ ✦
+
+            ✦
+
         </div>
 
+
         <p class="guest-label">
+
             Kepada Yth.
+
         </p>
+
 
         <div
             class="guest-name"
@@ -1717,19 +1878,33 @@ footer h2 {
 
         </div>
 
+
         <p>
+
             Dengan penuh kebahagiaan,
-            kami mengundang Anda untuk
-            hadir di hari istimewa
-            pernikahan kami.
+
+            kami mengundang Anda
+
+            untuk hadir di hari
+
+            istimewa pernikahan kami.
+
         </p>
+
 
         <p class="open-date">
-            Rabu,
-            23 September 2026
+
+            RABU
+
+            <br>
+
+            23 SEPTEMBER 2026
+
         </p>
 
+
         <br>
+
 
         <button
             class="btn"
@@ -1744,52 +1919,90 @@ footer h2 {
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
+     PETALS
+===================================================== -->
+
+<div class="petal-field">
+
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+
+</div>
+
+
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
 <header
     class="hero"
     id="home">
 
-    <div
-        class="center fade">
+    <div class="center fade">
 
         <div class="kicker">
-            The Wedding of
+
+            The Wedding Of
+
         </div>
+
 
         <h1>
+
             Arif
+
             <span class="amp">
+
                 &
+
             </span>
+
             Sella
+
         </h1>
 
+
         <div class="ornament">
+
             ✦ ❖ ✦
+
         </div>
+
 
         <p class="date">
 
             RABU ·
+
             23 SEPTEMBER 2026
 
         </p>
 
+
         <p>
 
             Dengan memohon rahmat
+
             dan ridho Allah SWT,
+
             kami bermaksud mengundang
+
             Bapak/Ibu/Saudara/i
+
             untuk hadir dan memberikan
+
             doa restu pada hari bahagia kami.
 
         </p>
 
+
         <br>
+
 
         <p class="hashtag">
 
@@ -1802,9 +2015,9 @@ footer h2 {
 </header>
 
 
-<!-- =========================================================
-     NAVIGASI
-========================================================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
@@ -1843,26 +2056,28 @@ footer h2 {
 </nav>
 
 
-<!-- =========================================================
+<!-- =====================================================
      AYAT
-========================================================= -->
+===================================================== -->
 
 <section
     id="quote"
     class="pattern">
 
     <div
-        class="container
+        class="
+        container
         center
         fade
-        quote-box">
+        quote-box
+        ">
 
         <div class="kicker">
 
-            QS. Ar-Rum
-            Ayat 21
+            QS. Ar-Rum Ayat 21
 
         </div>
+
 
         <h2 class="title">
 
@@ -1877,12 +2092,18 @@ footer h2 {
 
         </h2>
 
+
         <div class="ornament">
+
             ❖
+
         </div>
 
+
         <p>
+
             QS. Ar-Rum: 21
+
         </p>
 
     </div>
@@ -1890,26 +2111,35 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MEMPELAI
-========================================================= -->
+===================================================== -->
 
 <section id="mempelai">
 
     <div class="container">
 
+
         <div class="center fade">
 
             <div class="kicker">
+
                 Mempelai
+
             </div>
 
+
             <h2 class="title">
+
                 Arif & Sella
+
             </h2>
 
+
             <div class="ornament">
+
                 ✦ ❖ ✦
+
             </div>
 
         </div>
@@ -1923,41 +2153,61 @@ footer h2 {
             <div class="card couple fade">
 
                 <img
+
                     class="photo"
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
-                    alt="Arif Achmad Syaikhu">
+
+                    src="foto-arif.jpg"
+
+                    alt="Arif Achmad Syaikhu"
+
+                >
+
 
                 <h3>
+
                     Arif Achmad Syaikhu
+
                 </h3>
 
+
                 <p>
+
                     Putra Ketiga dari
+
                 </p>
+
 
                 <p>
 
                     <b>
+
                         Bapak Mulyadi
+
                     </b>
 
                     &
 
                     <b>
+
                         Ibu Misriah
+
                     </b>
 
                 </p>
 
+
                 <p class="address">
 
                     Jl. Singajaya Gg. II
+
                     RT. 3 RW. 1
 
                     <br>
 
                     Putat Kidul,
+
                     Gondanglegi,
+
                     Malang
 
                 </p>
@@ -1970,41 +2220,61 @@ footer h2 {
             <div class="card couple fade">
 
                 <img
+
                     class="photo"
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85"
-                    alt="Sella Gusti Shakira">
+
+                    src="foto-sella.jpg"
+
+                    alt="Sella Gusti Shakira"
+
+                >
+
 
                 <h3>
+
                     Sella Gusti Shakira
+
                 </h3>
 
+
                 <p>
+
                     Putri Kelima dari
+
                 </p>
+
 
                 <p>
 
                     <b>
+
                         Bapak M. Selor Kowi Asmuni
+
                     </b>
 
                     &
 
                     <b>
+
                         Ibu Titik Holipah
+
                     </b>
 
                 </p>
 
+
                 <p class="address">
 
                     Jl. Dewi Sartika IV
+
                     RT. 3 RW. 9
 
                     <br>
 
                     Temas,
+
                     Batu,
+
                     Kota Batu
 
                 </p>
@@ -2018,30 +2288,41 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      COUNTDOWN
-========================================================= -->
+===================================================== -->
 
 <section
     id="countdown"
     class="maroon">
 
     <div
-        class="container
+        class="
+        container
         center
-        fade">
+        fade
+        ">
 
         <div class="kicker">
+
             Save The Date
+
         </div>
 
+
         <h2 class="title">
+
             Menuju Hari Bahagia
+
         </h2>
 
+
         <p>
+
             Rabu,
+
             23 September 2026
+
         </p>
 
 
@@ -2050,11 +2331,15 @@ footer h2 {
             <div class="time-box">
 
                 <strong id="days">
+
                     0
+
                 </strong>
 
                 <span>
+
                     Hari
+
                 </span>
 
             </div>
@@ -2063,11 +2348,15 @@ footer h2 {
             <div class="time-box">
 
                 <strong id="hours">
+
                     0
+
                 </strong>
 
                 <span>
+
                     Jam
+
                 </span>
 
             </div>
@@ -2076,11 +2365,15 @@ footer h2 {
             <div class="time-box">
 
                 <strong id="minutes">
+
                     0
+
                 </strong>
 
                 <span>
+
                     Menit
+
                 </span>
 
             </div>
@@ -2089,11 +2382,15 @@ footer h2 {
             <div class="time-box">
 
                 <strong id="seconds">
+
                     0
+
                 </strong>
 
                 <span>
+
                     Detik
+
                 </span>
 
             </div>
@@ -2105,9 +2402,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      ACARA
-========================================================= -->
+===================================================== -->
 
 <section
     id="acara"
@@ -2115,18 +2412,27 @@ footer h2 {
 
     <div class="container">
 
+
         <div class="center fade">
 
             <div class="kicker">
+
                 Wedding Event
+
             </div>
 
+
             <h2 class="title">
+
                 Rangkaian Acara
+
             </h2>
 
+
             <div class="ornament">
-                ❖
+
+                ✦ ❖ ✦
+
             </div>
 
         </div>
@@ -2140,49 +2446,77 @@ footer h2 {
             <div class="card event fade">
 
                 <h3>
+
                     Akad Nikah
+
                 </h3>
 
+
                 <p>
+
                     <b>
+
                         Rabu,
+
                         23 September 2026
+
                     </b>
+
                 </p>
 
+
                 <p>
+
                     09.00 WIB
+
                     s.d. Selesai
+
                 </p>
 
-                <div class="divider">
-                </div>
+
+                <div class="divider"></div>
+
 
                 <p>
+
                     <b>
+
                         Kediaman Mempelai Putri
+
                     </b>
+
                 </p>
+
 
                 <p>
 
                     Jl. Dewi Sartika IV
+
                     RT. 3 RW. 9
 
                     <br>
 
                     Temas,
+
                     Batu,
+
                     Kota Batu
 
                 </p>
 
+
                 <br>
 
+
                 <a
+
                     class="btn"
+
                     target="_blank"
-                    href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6">
+
+                    href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6"
+
+                >
 
                     📍 Lihat Lokasi
 
@@ -2196,49 +2530,77 @@ footer h2 {
             <div class="card event fade">
 
                 <h3>
+
                     Resepsi
+
                 </h3>
 
+
                 <p>
+
                     <b>
+
                         Rabu,
+
                         23 September 2026
+
                     </b>
+
                 </p>
 
+
                 <p>
+
                     12.00 WIB
+
                     s.d. Selesai
+
                 </p>
 
-                <div class="divider">
-                </div>
+
+                <div class="divider"></div>
+
 
                 <p>
+
                     <b>
+
                         Kediaman Mempelai Putri
+
                     </b>
+
                 </p>
+
 
                 <p>
 
                     Jl. Dewi Sartika IV
+
                     RT. 3 RW. 9
 
                     <br>
 
                     Temas,
+
                     Batu,
+
                     Kota Batu
 
                 </p>
 
+
                 <br>
 
+
                 <a
+
                     class="btn"
+
                     target="_blank"
-                    href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6">
+
+                    href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6"
+
+                >
 
                     📍 Lihat Lokasi
 
@@ -2254,9 +2616,14 @@ footer h2 {
             style="margin-top:35px">
 
             <a
+
                 class="btn"
+
                 target="_blank"
-                href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6">
+
+                href="https://goo.gl/maps/eqBvctxjHR5Rq5xB6"
+
+            >
 
                 🗺️ Buka Google Maps
 
@@ -2269,10 +2636,9 @@ footer h2 {
 </section>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      WEDDING GIFT
-========================================================= -->
+===================================================== -->
 
 <section
     id="gift"
@@ -2280,25 +2646,37 @@ footer h2 {
 
     <div class="container">
 
+
         <div class="center fade">
 
             <div class="kicker">
+
                 Wedding Gift
+
             </div>
 
+
             <h2 class="title">
+
                 Tanda Kasih
+
             </h2>
+
 
             <p>
 
                 Doa dan kehadiran Anda
-                adalah hadiah terindah bagi kami.
 
-                <br>
+                adalah hadiah terindah
+
+                bagi kami.
+
+                <br><br>
 
                 Bagi yang ingin memberikan
+
                 tanda kasih, dapat melalui
+
                 rekening berikut.
 
             </p>
@@ -2311,8 +2689,11 @@ footer h2 {
             <div class="bank">
 
                 <strong>
+
                     BANK BRI
+
                 </strong>
+
 
                 <div
                     class="account-number"
@@ -2322,21 +2703,30 @@ footer h2 {
 
                 </div>
 
+
                 <p>
 
                     a.n.
 
                     <b>
+
                         SELLA GUSTI SHAKIRA
+
                     </b>
 
                 </p>
 
+
                 <br>
 
+
                 <button
+
                     class="btn"
-                    onclick="copyAccount()">
+
+                    onclick="copyAccount()"
+
+                >
 
                     📋 Salin Nomor Rekening
 
@@ -2351,9 +2741,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
-     RSVP
-========================================================= -->
+<!-- =====================================================
+     RSVP & UCAPAN
+===================================================== -->
 
 <section
     id="rsvp"
@@ -2361,22 +2751,30 @@ footer h2 {
 
     <div class="container">
 
+
         <div class="center fade">
 
             <div class="kicker">
+
                 Please Confirm
+
             </div>
 
+
             <h2 class="title">
+
                 RSVP & Ucapan
+
             </h2>
+
 
             <p>
 
-                Silakan konfirmasi
-                kehadiran dan kirimkan
-                doa terbaik untuk
-                Arif & Sella.
+                Silakan konfirmasi kehadiran
+
+                dan kirimkan doa terbaik
+
+                untuk Arif & Sella.
 
             </p>
 
@@ -2384,81 +2782,130 @@ footer h2 {
 
 
         <form
+
             class="form card fade"
-            onsubmit="sendRSVP(event)">
+
+            onsubmit="sendRSVP(event)"
+
+        >
 
             <label>
+
                 Nama
+
             </label>
+
 
             <input
+
                 id="guestName"
+
                 required
-                placeholder="Nama Anda">
+
+                placeholder="Nama Anda"
+
+            >
 
 
             <label>
+
                 Konfirmasi Kehadiran
+
             </label>
 
+
             <select
+
                 id="attendance"
-                required>
+
+                required
+
+            >
 
                 <option value="">
+
                     Pilih...
+
                 </option>
 
                 <option>
+
                     Hadir
+
                 </option>
 
                 <option>
+
                     Tidak dapat hadir
+
                 </option>
 
             </select>
 
 
             <label>
+
                 Jumlah Tamu
+
             </label>
+
 
             <select
-                id="guestCount">
+
+                id="guestCount"
+
+            >
 
                 <option>
+
                     1 Orang
+
                 </option>
 
                 <option>
+
                     2 Orang
+
                 </option>
 
                 <option>
+
                     3 Orang
+
                 </option>
 
                 <option>
+
                     4 Orang
+
                 </option>
 
             </select>
 
 
             <label>
+
                 Ucapan & Doa
+
             </label>
 
+
             <textarea
+
                 id="message"
-                placeholder="Tuliskan ucapan dan doa...">
-            </textarea>
+
+                placeholder="Tuliskan ucapan dan doa..."
+
+            ></textarea>
 
 
             <button
+
                 class="btn"
-                type="submit">
+
+                type="submit"
+
+            >
 
                 💌 Kirim via WhatsApp
 
@@ -2471,29 +2918,43 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
     <div class="ornament">
+
         ✦ ❖ ✦
+
     </div>
 
+
     <h2>
+
         Arif & Sella
+
     </h2>
 
-    <p>
-        Terima kasih atas doa dan
-        restu yang diberikan.
-    </p>
 
     <p>
-        Rabu,
-        23 September 2026
+
+        Terima kasih atas doa
+
+        dan restu yang diberikan.
+
     </p>
+
+
+    <p>
+
+        Rabu,
+
+        23 September 2026
+
+    </p>
+
 
     <p class="hashtag">
 
@@ -2504,151 +2965,199 @@ footer h2 {
 </footer>
 
 
-<!-- =========================================================
-     MUSIK
-========================================================= -->
+<!-- =====================================================
+     MUSIC
+===================================================== -->
 
 <button
+
     class="music"
+
     id="musicBtn"
-    onclick="toggleMusic()">
+
+    onclick="toggleMusic()"
+
+>
 
     ♫
 
 </button>
 
 
-<!--
-    Letakkan file musik bernama:
-
-    wedding-music.mp3
-
-    di folder yang sama dengan index.html.
--->
-
 <audio
+
     id="music"
-    loop>
+
+    loop
+
+>
 
     <source
+
         src="wedding-music.mp3"
-        type="audio/mpeg">
+
+        type="audio/mpeg"
+
+    >
 
 </audio>
 
 
-<!-- =========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
 
-/* =========================================================
+/* =====================================================
    NAMA TAMU OTOMATIS
-=========================================================
-
-Contoh link:
-
-index.html?to=Bapak%20Ahmad
-
-atau:
-
-index.html?to=Keluarga%20Besar%20Sella
-
-*/
+===================================================== */
 
 const params =
+
     new URLSearchParams(
+
         window.location.search
+
     );
 
+
 const guest =
-    params.get("to");
+
+    params.get(
+        "to"
+    );
 
 
 if (guest) {
 
     document
+
         .getElementById(
             "guestDisplay"
         )
-        .textContent = guest;
+
+        .textContent =
+
+        guest;
 
 }
 
 
-/* =========================================================
-   BUKA UNDANGAN
-========================================================= */
+/* =====================================================
+   OPEN INVITATION
+===================================================== */
 
 function openInvitation() {
 
     document
+
         .getElementById(
             "opening"
         )
+
         .classList
-        .add("hide");
+
+        .add(
+            "hide"
+        );
+
 
     document
+
         .body
+
         .classList
-        .remove("locked");
+
+        .remove(
+            "locked"
+        );
 
 
     const music =
+
         document
+
         .getElementById(
             "music"
         );
 
 
     music
+
         .play()
-        .then(() => {
 
-            document
-                .getElementById(
-                    "musicBtn"
-                )
-                .textContent = "⏸";
+        .then(
 
-        })
-        .catch(() => {});
+            () => {
+
+                document
+
+                    .getElementById(
+                        "musicBtn"
+                    )
+
+                    .textContent =
+                    "⏸";
+
+            }
+
+        )
+
+        .catch(
+            () => {}
+        );
 
 }
 
 
-/* =========================================================
+/* =====================================================
    COUNTDOWN
-========================================================= */
+===================================================== */
 
 const weddingDate =
 
     new Date(
+
         "September 23, 2026 09:00:00 GMT+0700"
+
     ).getTime();
 
 
 function updateCountdown() {
 
+
+    const now =
+
+        new Date()
+
+        .getTime();
+
+
     let distance =
 
         weddingDate -
 
-        new Date().getTime();
+        now;
 
 
-    if (distance < 0) {
+    if (
+        distance < 0
+    ) {
 
-        distance = 0;
+        distance =
+            0;
 
     }
 
 
     document
-        .getElementById("days")
+
+        .getElementById(
+            "days"
+        )
+
         .textContent =
 
         Math.floor(
@@ -2666,7 +3175,11 @@ function updateCountdown() {
 
 
     document
-        .getElementById("hours")
+
+        .getElementById(
+            "hours"
+        )
+
         .textContent =
 
         Math.floor(
@@ -2685,7 +3198,11 @@ function updateCountdown() {
 
 
     document
-        .getElementById("minutes")
+
+        .getElementById(
+            "minutes"
+        )
+
         .textContent =
 
         Math.floor(
@@ -2703,7 +3220,11 @@ function updateCountdown() {
 
 
     document
-        .getElementById("seconds")
+
+        .getElementById(
+            "seconds"
+        )
+
         .textContent =
 
         Math.floor(
@@ -2720,53 +3241,78 @@ function updateCountdown() {
 
 
 setInterval(
+
     updateCountdown,
+
     1000
+
 );
 
 
 updateCountdown();
 
 
-/* =========================================================
-   SALIN REKENING
-========================================================= */
+/* =====================================================
+   COPY ACCOUNT
+===================================================== */
 
 function copyAccount() {
 
     const account =
+
         "312301042920536";
 
 
     navigator
+
         .clipboard
-        .writeText(account)
 
-        .then(() => {
+        .writeText(
+            account
+        )
 
-            alert(
-                "Nomor rekening BRI berhasil disalin."
-            );
+        .then(
 
-        })
+            () => {
 
-        .catch(() => {
+                alert(
 
-            alert(
-                "Nomor rekening: " +
-                account
-            );
+                    "Nomor rekening BRI berhasil disalin."
 
-        });
+                );
+
+            }
+
+        )
+
+        .catch(
+
+            () => {
+
+                alert(
+
+                    "Nomor rekening: "
+
+                    +
+
+                    account
+
+                );
+
+            }
+
+        );
 
 }
 
 
-/* =========================================================
+/* =====================================================
    RSVP WHATSAPP
-========================================================= */
+===================================================== */
 
-function sendRSVP(event) {
+function sendRSVP(
+    event
+) {
 
     event.preventDefault();
 
@@ -2774,42 +3320,52 @@ function sendRSVP(event) {
     const name =
 
         document
+
         .getElementById(
             "guestName"
         )
+
         .value;
 
 
     const attendance =
 
         document
+
         .getElementById(
             "attendance"
         )
+
         .value;
 
 
     const count =
 
         document
+
         .getElementById(
             "guestCount"
         )
+
         .value;
 
 
     const message =
 
         document
+
         .getElementById(
             "message"
         )
+
         .value;
 
 
     const text =
 
-`Halo Arif & Sella,
+`Assalamu'alaikum.
+
+Halo Arif & Sella,
 
 Nama: ${name}
 
@@ -2820,7 +3376,9 @@ Jumlah Tamu:
 ${count}
 
 Ucapan & Doa:
-${message}`;
+${message}
+
+#SELLAmanyadenganARIF`;
 
 
     window.open(
@@ -2829,7 +3387,9 @@ ${message}`;
 
         +
 
-        encodeURIComponent(text),
+        encodeURIComponent(
+            text
+        ),
 
         "_blank"
 
@@ -2838,15 +3398,16 @@ ${message}`;
 }
 
 
-/* =========================================================
-   MUSIK
-========================================================= */
+/* =====================================================
+   MUSIC
+===================================================== */
 
 function toggleMusic() {
 
     const music =
 
         document
+
         .getElementById(
             "music"
         );
@@ -2855,23 +3416,32 @@ function toggleMusic() {
     const button =
 
         document
+
         .getElementById(
             "musicBtn"
         );
 
 
-    if (music.paused) {
+    if (
+        music.paused
+    ) {
 
         music
+
             .play()
 
-            .then(() => {
+            .then(
 
-                button
-                    .textContent =
-                    "⏸";
+                () => {
 
-            });
+                    button
+
+                        .textContent =
+                        "⏸";
+
+                }
+
+            );
 
     }
 
@@ -2880,6 +3450,7 @@ function toggleMusic() {
         music.pause();
 
         button
+
             .textContent =
             "♫";
 
@@ -2888,9 +3459,9 @@ function toggleMusic() {
 }
 
 
-/* =========================================================
-   ANIMASI SCROLL
-========================================================= */
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
 
 const observer =
 
@@ -2903,13 +3474,20 @@ const observer =
                 entry => {
 
                     if (
+
                         entry.isIntersecting
+
                     ) {
 
                         entry
+
                             .target
+
                             .classList
-                            .add("show");
+
+                            .add(
+                                "show"
+                            );
 
                     }
 
@@ -2920,16 +3498,21 @@ const observer =
         },
 
         {
-            threshold: .12
+
+            threshold:
+                .12
+
         }
 
     );
 
 
 document
+
     .querySelectorAll(
         ".fade"
     )
+
     .forEach(
 
         element =>
@@ -2943,7 +3526,5 @@ document
 
 </script>
 
-
 </body>
 </html>
-```
