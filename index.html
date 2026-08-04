@@ -771,51 +771,6 @@ nav a:hover {
 
 
 /* =========================================================
-   10. GALERI
-========================================================= */
-
-.gallery {
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(3, 1fr);
-
-    gap: 15px;
-
-}
-
-.gallery img {
-
-    width: 100%;
-
-    height: 300px;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-
-    border:
-
-        2px solid
-
-        rgba(201,162,39,.5);
-
-    transition: .6s;
-
-}
-
-.gallery img:hover {
-
-    transform:
-
-        scale(1.04);
-
-}
-
-
-/* =========================================================
    11. WEDDING GIFT
 ========================================================= */
 
@@ -1098,44 +1053,32 @@ footer h2 {
 }
 
 .flower {
-
     position: absolute;
-
-    width: 80px;
-
-    height: 80px;
-
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
 
     background:
-
         radial-gradient(
-
             circle,
-
-            var(--gold-light) 0 12%,
-
-            var(--gold) 13% 25%,
-
-            transparent 26%
-
+            #fffaf3 0 10%,
+            #ead58a 11% 18%,
+            #c94f72 19% 38%,
+            #8b1e3f 39% 58%,
+            #ffffff 59% 72%,
+            transparent 73%
         );
 
     box-shadow:
-
-        0 0 0 10px
-
-        rgba(201,162,39,.1);
+        0 0 0 8px rgba(255,255,255,.15),
+        0 0 25px rgba(201,79,114,.25);
 
     animation:
-
         flowerBreathe
-
         5s
-
         ease-in-out
-
         infinite;
+}
 
 }
 
@@ -1195,41 +1138,34 @@ footer h2 {
 ========================================================= */
 
 .leaf {
-
     position: absolute;
-
     width: 70px;
-
     height: 30px;
 
-    border:
-
-        2px solid
-
-        var(--gold);
+    border: 2px solid #8b1e3f;
 
     border-radius:
-
         100%
-
         0
-
         100%
-
         0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b1e3f,
+            #c94f72
+        );
+
+    opacity: .85;
 
     transform: rotate(30deg);
 
     animation:
-
         leafSway
-
         6s
-
         ease-in-out
-
         infinite;
-
 }
 
 
@@ -1237,130 +1173,14 @@ footer h2 {
    17. KELopak JATUH
 ========================================================= */
 
-.petal-field {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 120;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-}
-
 .petal {
-
-    position: absolute;
-
-    top: -40px;
-
-    width: 13px;
-
-    height: 20px;
-
     background:
-
         linear-gradient(
-
             135deg,
-
-            var(--gold-light),
-
-            var(--gold)
-
+            #ffffff,
+            #f7b6c8,
+            #8b1e3f
         );
-
-    border-radius:
-
-        70%
-
-        0
-
-        70%
-
-        0;
-
-    opacity: .6;
-
-    animation:
-
-        petalFall
-
-        linear
-
-        infinite;
-
-}
-
-.petal:nth-child(1) {
-
-    left: 5%;
-
-    animation-duration: 13s;
-
-}
-
-.petal:nth-child(2) {
-
-    left: 18%;
-
-    animation-duration: 16s;
-
-    animation-delay: -5s;
-
-}
-
-.petal:nth-child(3) {
-
-    left: 32%;
-
-    animation-duration: 14s;
-
-    animation-delay: -8s;
-
-}
-
-.petal:nth-child(4) {
-
-    left: 48%;
-
-    animation-duration: 18s;
-
-    animation-delay: -12s;
-
-}
-
-.petal:nth-child(5) {
-
-    left: 63%;
-
-    animation-duration: 15s;
-
-    animation-delay: -4s;
-
-}
-
-.petal:nth-child(6) {
-
-    left: 77%;
-
-    animation-duration: 17s;
-
-    animation-delay: -10s;
-
-}
-
-.petal:nth-child(7) {
-
-    left: 90%;
-
-    animation-duration: 14s;
-
-    animation-delay: -7s;
-
 }
 
 
@@ -2010,10 +1830,6 @@ footer h2 {
             Acara
         </a>
 
-        <a href="#gallery">
-            Galeri
-        </a>
-
         <a href="#gift">
             Gift
         </a>
@@ -2452,64 +2268,6 @@ footer h2 {
 
 </section>
 
-
-<!-- =========================================================
-     GALERI
-========================================================= -->
-
-<section
-    id="gallery">
-
-    <div class="container">
-
-        <div class="center fade">
-
-            <div class="kicker">
-                Moments
-            </div>
-
-            <h2 class="title">
-                Our Gallery
-            </h2>
-
-            <div class="ornament">
-                ✦ ❖ ✦
-            </div>
-
-        </div>
-
-
-        <div class="gallery fade">
-
-            <img
-                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-            <img
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-            <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-            <img
-                src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-            <img
-                src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-            <img
-                src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding">
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =========================================================
