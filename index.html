@@ -93,7 +93,7 @@ section {
 }
 
 /* =====================================================
-   JAWA ORNAMENT DIVIDER (CSS REPLACEMENT FOR IMAGES)
+   JAWA ORNAMENT DIVIDER
 ===================================================== */
 
 .jawa-divider {
@@ -178,6 +178,19 @@ section {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
     background: linear-gradient(135deg, #ffffff, var(--gold-light));
+}
+
+.btn-secondary {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-light);
+    border: 1px solid var(--gold-primary);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: var(--gold-primary);
+    color: var(--maroon-dark);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* =====================================================
@@ -314,7 +327,7 @@ nav a:hover {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     overflow: hidden;
 }
 
@@ -331,6 +344,10 @@ nav a:hover {
 
 .two {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.three {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 /* =====================================================
@@ -389,16 +406,163 @@ nav a:hover {
 }
 
 /* =====================================================
-   GIFT & RSVP FORM
+   GIFT SECTION & BANK LOGO STYLING
 ===================================================== */
 
-.bank-card {
-    text-align: center;
-    background: linear-gradient(135deg, rgba(74, 10, 31, 0.8), rgba(26, 3, 11, 0.9));
-    border: 1px solid var(--gold-primary);
-    padding: 35px;
+.gift-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(74, 10, 31, 0.85), rgba(26, 3, 11, 0.95));
+    border: 1px solid var(--glass-border);
     border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    overflow: hidden;
 }
+
+.gift-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+    transition: 0.6s;
+}
+
+.gift-card:hover::before {
+    left: 100%;
+}
+
+.gift-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--gold-primary);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25), 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* Container khusus Logo Bank di Atas No Rekening */
+.bank-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    margin: 0 auto 18px;
+    min-height: 48px;
+    max-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.bank-logo-img {
+    height: 32px;
+    max-width: 140px;
+    object-fit: contain;
+}
+
+.account-number {
+    font-family: 'Cinzel', monospace, serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #ffffff;
+    margin: 12px 0 6px;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.account-name {
+    font-size: 14px;
+    color: var(--pink-soft);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+
+.gift-address-box {
+    text-align: left;
+    background: rgba(15, 2, 7, 0.5);
+    border: 1px dashed var(--glass-border);
+    padding: 16px;
+    border-radius: 12px;
+    margin: 12px 0 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.gift-address-box strong {
+    color: var(--gold-light);
+}
+
+/* ANIMASI CONTAINER TANDA KASIH */
+#tandaKasihContainer {
+    animation: fadeInGift 0.5s ease-in-out;
+}
+
+@keyframes fadeInGift {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* COPY BUTTON ANIMATION */
+.btn-copy {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-copy.copied {
+    background: linear-gradient(135deg, #2e7d32, #4caf50) !important;
+    color: #ffffff !important;
+    border-color: #81c784 !important;
+    transform: scale(0.98);
+}
+
+/* TOAST NOTIFICATION */
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon-medium));
+    color: var(--gold-light);
+    border: 1.5px solid var(--gold-primary);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.3);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* =====================================================
+   FORM INPUTS
+===================================================== */
 
 input, select, textarea {
     width: 100%;
@@ -491,6 +655,11 @@ input:focus, select:focus, textarea:focus {
 </head>
 
 <body class="locked">
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast">
+    <span>✨</span> <span id="toastMsg">Nomor rekening berhasil disalin!</span>
+</div>
 
 <!-- =====================================================
      PETALS
@@ -609,7 +778,7 @@ input:focus, select:focus, textarea:focus {
             <!-- ARIF -->
             <div class="card center fade">
                 <div class="photo-wrapper">
-                    <img class="photo" src="foto-arif.png" alt="Arif Achmad Syaikhu">
+                    <img class="photo" src="foto-arif.jpg" alt="Arif Achmad Syaikhu">
                 </div>
 
                 <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">
@@ -627,7 +796,7 @@ input:focus, select:focus, textarea:focus {
             <!-- SELLA -->
             <div class="card center fade">
                 <div class="photo-wrapper">
-                    <img class="photo" src="foto-sella.png" alt="Sella Gusti Shakira">
+                    <img class="photo" src="foto-sella.jpg" alt="Sella Gusti Shakira">
                 </div>
 
                 <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold-light);">
@@ -715,24 +884,87 @@ input:focus, select:focus, textarea:focus {
 </section>
 
 <!-- =====================================================
-     WEDDING GIFT
+     WEDDING GIFT / TANDA KASIH
 ===================================================== -->
 <section id="gift">
     <div class="container">
         <div class="center fade">
             <div class="kicker">WEDDING GIFT</div>
             <h2 class="title">Tanda Kasih</h2>
-            <p style="color: var(--text-muted); max-width: 500px; margin: auto;">
-                Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, silahkan klik di bawah
+            <p style="color: var(--text-muted); max-width: 600px; margin: auto; line-height: 1.7;">
+                Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih berupa kado cashless atau kiriman hadiah, silakan klik tombol di bawah ini:
             </p>
             <div class="jawa-divider slim">♦</div>
+
+            <!-- TOMBOL UNTUK MEMUNCULKAN ITEM TANDA KASIH -->
+            <button id="btnTandaKasih" class="btn" onclick="toggleTandaKasih()" style="margin-top: 15px;">
+                🎁 KIRIM TANDA KASIH
+            </button>
         </div>
 
-        <div style="max-width: 550px; margin: 30px auto;" class="fade">
-            <div class="bank-card">                
-                <br>
-                <button class="btn" onclick="copyAccount()">🎁 KIRIM TANDA KASIH</button>
+        <!-- CONTAINER 3 ITEM TANDA KASIH (SEMBUNYI SECARA DEFAULT) -->
+        <div id="tandaKasihContainer" class="grid three" style="margin-top: 35px; display: none;">
+            
+            <!-- ITEM 1: BANK MANDIRI -->
+            <div class="gift-card">
+                <div>
+                    <!-- Logo Bank Mandiri di atas Nomor Rekening -->
+                    <div class="bank-logo-container">
+                        <img 
+                            src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" 
+                            alt="Bank Mandiri" 
+                            class="bank-logo-img"
+                        >
+                    </div>
+                    <div class="account-number">1440019743779</div>
+                    <div class="account-name">a.n. ARIF ACHMAD SYAIKHU</div>
+                </div>
+                <button class="btn btn-copy" onclick="copyText('1440019743779', 'Bank Mandiri', this)">
+                    📋 SALIN NO. REKENING
+                </button>
             </div>
+
+            <!-- ITEM 2: BANK BRI -->
+            <div class="gift-card">
+                <div>
+                    <!-- Logo Bank BRI di atas Nomor Rekening -->
+                    <div class="bank-logo-container">
+                        <img 
+                            src="https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg" 
+                            alt="Bank BRI" 
+                            class="bank-logo-img"
+                        >
+                    </div>
+                    <div class="account-number">312301042920536</div>
+                    <div class="account-name">a.n. SELLA GUSTI SHAKIRA</div>
+                </div>
+                <button class="btn btn-copy" onclick="copyText('312301042920536', 'Bank BRI', this)">
+                    📋 SALIN NO. REKENING
+                </button>
+            </div>
+
+            <!-- ITEM 3: KIRIM HADIAH / ALAMAT -->
+            <div class="gift-card">
+                <div>
+                    <div class="bank-logo-container" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-primary);">
+                        <span style="font-size: 26px;">📦</span>
+                    </div>
+                    <div class="gift-address-box">
+                        <strong style="display:block; margin-bottom:4px; font-size:14px; color:var(--gold-light);">Penerima: SELLA GUSTI SHAKIRA</strong>
+                        <span style="display:block; margin-bottom:6px; color:var(--text-light);">📱 No. HP: 087759744620</span>
+                        <span>📍 <strong>Alamat:</strong> Jl. Dewi Sartika Gg. IV RT. 03 RW. 09 Temas Batu Kota Batu</span>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <button class="btn btn-copy" onclick="copyText('Nama Penerima: SELLA GUSTI SHAKIRA\nNomor HP: 087759744620\nAlamat: Jl. Dewi Sartika Gg. IV RT. 03 RW. 09 Temas Batu Kota Batu', 'Alamat Pengiriman', this)">
+                        📋 SALIN ALAMAT
+                    </button>
+                    <a class="btn btn-secondary" target="_blank" href="https://wa.me/6287759744620?text=Halo%20Sella,%20saya%20ingin%20konfirmasi%20pengiriman%20hadiah%20pernikahan." style="padding: 10px 20px; font-size: 11px;">
+                        💬 KONFIRMASI HADIAH
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -837,14 +1069,59 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-/* SALIN REKENING & POPUP */
-function copyAccount() {
-    const account = "312301042920536";
-    navigator.clipboard.writeText(account).then(() => {
-        alert("nomor rekening berhasil disalin");
+/* TOGGLE MEMUNCULKAN / MENYEMBUNYIKAN TANDA KASIH */
+function toggleTandaKasih() {
+    const container = document.getElementById("tandaKasihContainer");
+    const btn = document.getElementById("btnTandaKasih");
+
+    if (container.style.display === "none" || container.style.display === "") {
+        container.style.display = "grid";
+        btn.innerHTML = "✨ SEMBUNYIKAN TANDA KASIH";
+    } else {
+        container.style.display = "none";
+        btn.innerHTML = "🎁 KIRIM TANDA KASIH";
+    }
+}
+
+/* SALIN TEKS DENGAN ANIMASI TOAST & FEEDBACK BUTTON */
+let toastTimeout;
+function copyText(text, label, btnElement) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast(`✨ ${label} berhasil disalin!`);
     }).catch(() => {
-        alert("nomor rekening berhasil disalin");
+        // Fallback untuk perangkat lama/tanpa SSL
+        const tempInput = document.createElement("textarea");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        showToast(`✨ ${label} berhasil disalin!`);
     });
+
+    if (btnElement) {
+        const originalText = btnElement.innerHTML;
+        btnElement.classList.add("copied");
+        btnElement.innerHTML = "✅ BERHASIL DISALIN!";
+        
+        setTimeout(() => {
+            btnElement.classList.remove("copied");
+            btnElement.innerHTML = originalText;
+        }, 2500);
+    }
+}
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    const toastMsg = document.getElementById("toastMsg");
+    toastMsg.textContent = message;
+    
+    toast.classList.add("show");
+    
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
 }
 
 /* RSVP WHATSAPP */
@@ -862,7 +1139,7 @@ function sendRSVP(event) {
 /* MUSIC TOGGLE */
 function toggleMusic() {
     const music = document.getElementById("music");
-    const button = document.getElementById("musicBtn");
+    button = document.getElementById("musicBtn");
     if (music.paused) {
         music.play().then(() => { button.textContent = "⏸"; });
     } else {
