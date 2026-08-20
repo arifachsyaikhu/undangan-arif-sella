@@ -400,15 +400,6 @@ nav a:hover {
     border-radius: 20px;
 }
 
-.account-number {
-    margin: 15px 0;
-    color: var(--gold-light);
-    font-family: 'Cinzel', serif;
-    font-size: 26px;
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
 input, select, textarea {
     width: 100%;
     padding: 14px 16px;
@@ -732,19 +723,15 @@ input:focus, select:focus, textarea:focus {
             <div class="kicker">WEDDING GIFT</div>
             <h2 class="title">Tanda Kasih</h2>
             <p style="color: var(--text-muted); max-width: 500px; margin: auto;">
-                Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui rekening berikut:
+                Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, silahkan klik di bawah
             </p>
             <div class="jawa-divider slim">♦</div>
         </div>
 
         <div style="max-width: 550px; margin: 30px auto;" class="fade">
-            <div class="bank-card">
-                <h3 style="font-family: 'Cinzel', serif; color: var(--gold-primary); font-size: 22px;">BANK BRI</h3>
-                <div class="account-number" id="account">312301042920536</div>
-                <p style="color: var(--text-muted);">a.n. <b style="color: var(--text-light);">SELLA GUSTI SHAKIRA</b></p>
-                
+            <div class="bank-card">                
                 <br>
-                <button class="btn" onclick="copyAccount()">📋 SALIN NOMOR REKENING</button>
+                <button class="btn" onclick="copyAccount()">🎁 KIRIM TANDA KASIH</button>
             </div>
         </div>
     </div>
@@ -850,13 +837,13 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-/* SALIN REKENING */
+/* SALIN REKENING & POPUP */
 function copyAccount() {
     const account = "312301042920536";
     navigator.clipboard.writeText(account).then(() => {
-        alert("Nomor rekening BRI berhasil disalin.");
+        alert("nomor rekening berhasil disalin");
     }).catch(() => {
-        alert("Nomor rekening: " + account);
+        alert("nomor rekening berhasil disalin");
     });
 }
 
